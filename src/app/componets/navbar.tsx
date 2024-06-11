@@ -22,7 +22,7 @@ export default function Navbar() {
                         <>
                             <div className={`absolute top-[60px] right-0  w-auto  h-auto flex flex-col bg-white p-5 gap-3 text-2xl rounded-b-lg transform transition-transform duration-2000 ease-in-out ${isMoiblieMenuExpanded ? 'translate-x-0' : 'translate-x-full'}`} onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                                 <Link href={"/"} className="hover:underline">Home</Link>
-                                <Link href={"/about"} className="hover:underline">News & Blog</Link>
+                                <Link href={"/news"} className="hover:underline">News & Blog</Link>
                                 <Link href={"/services"} className="hover:underline">Rankings</Link>
                                 <Link href={"/contact_us"} className="hover:underline">Fantasy:101</Link>
                             </div>
@@ -30,7 +30,7 @@ export default function Navbar() {
                     }
                 </div>
                 <div className="hidden md:flex flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
-                    <Link href={"/about"} className="hover:underline">News & Blog</Link>
+                    <Link href={"/news"} className="hover:underline">News & Blog</Link>
                     <Link href={"/services"} className="hover:underline">Rankings</Link>
                     <Link href={"/contact_us"} className="f">Fantasy:101</Link>
                     <Link href={"/book_appointment"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in/Sign-up</Link>
