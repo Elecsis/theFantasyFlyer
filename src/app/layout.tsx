@@ -4,7 +4,10 @@ import { Kameron } from 'next/font/google'
 import Navbar from './componets/navbar'
 import Footer from './componets/footer'
 
-const kameron = Kameron({ subsets: ['latin'] ,})
+const kameron = Kameron({
+   subsets: ['latin'],
+   weight: ['400', '500', '600', '700']
+  })
 
 export const metadata: Metadata = {
   title: 'The Fanatasy Flyer',
