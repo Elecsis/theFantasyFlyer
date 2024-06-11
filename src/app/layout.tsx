@@ -6,7 +6,7 @@ import Footer from './componets/footer'
 
 const kameron = Kameron({
    subsets: ['latin'],
-   weight: ['400', '500', '600', '700']
+   weight: ['400', '700']
   })
 
 export const metadata: Metadata = {
