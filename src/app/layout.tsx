@@ -12,7 +12,7 @@ const kameron = Kameron({
 export const metadata: Metadata = {
   title: 'The Fanatasy Flyer',
   description: 'We Fly High and Hunt Championships!',
-  manifest: 'favicon.ico',
+  manifest: 'public/favicon.ico',
 }
 
 export default function RootLayout({

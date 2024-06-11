@@ -14,7 +14,7 @@ export default function Navbar() {
                     <h1 className="hidden lg:flex text-5xl text-lime-500">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
-                    <Link href={"/book_appointment"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in/Sign-up</Link> 
+                    <Link href={"/"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link> 
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
                     </div>
@@ -23,17 +23,19 @@ export default function Navbar() {
                             <div className={`absolute top-[60px] right-0  w-auto  h-auto flex flex-col bg-white p-5 gap-3 text-2xl rounded-b-lg transform transition-transform duration-2000 ease-in-out ${isMoiblieMenuExpanded ? 'translate-x-0' : 'translate-x-full'}`} onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                                 <Link href={"/"} className="hover:underline">Home</Link>
                                 <Link href={"/news"} className="hover:underline">News & Blog</Link>
-                                <Link href={"/services"} className="hover:underline">Rankings</Link>
-                                <Link href={"/contact_us"} className="hover:underline">Fantasy:101</Link>
+                                <Link href={"/rankings"} className="hover:underline">Rankings</Link>
+                                <Link href={"/research"} className="hover:underline">Research</Link>
+                                <Link href={"/fantasy"} className="hover:underline">Fantasy Football:101</Link>
                             </div>
                         </>
                     }
                 </div>
                 <div className="hidden md:flex flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
                     <Link href={"/news"} className="hover:underline">News & Blog</Link>
-                    <Link href={"/services"} className="hover:underline">Rankings</Link>
-                    <Link href={"/contact_us"} className="f">Fantasy:101</Link>
-                    <Link href={"/book_appointment"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in/Sign-up</Link>
+                    <Link href={"/rankings"} className="hover:underline">Rankings</Link>
+                    <Link href={"/research"} className="hover:underline">Research</Link>
+                    <Link href={"/fantasy"} className="f">Fantasy Football:101</Link>
+                    <Link href={"/"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in</Link>
                 </div>
             </nav>
         </>
