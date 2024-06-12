@@ -12,7 +12,7 @@ const kameron = Kameron({
 export const metadata: Metadata = {
   title: 'The Fanatasy Flyer',
   description: 'We Fly High and Hunt Championships!',
-  manifest: 'public/favicon.ico',
+  manifest: '/favicon.ico',
 }
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='bg-white'>
       <body className={kameron.className}>
         <Navbar/>
         {children}
