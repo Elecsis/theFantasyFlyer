@@ -1,109 +1,87 @@
+import React from "react";
 import Image from 'next/image'
 import Link from 'next/link'
-import React from "react";
 
-
-export default function News() {
+export default function Blog() {
     return (
-        <main className=" bg-white text-black ">
-            <div className='flex flex-col w-full lg:flex-row px-5 lg:px-10'>
-                <div className='lg:w-4/5 flex flex-col'>
-                    <div className='w-full text-center md:text-left'>
-                        <h1 className='font-semibold text-2xl py-6 md:pt-14  md:pb-10 md:text-left'>Recent posts</h1>
-                    </div> 
-                    <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0'>
+        <main className="bg-white text-black">
 
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
-
-
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
-
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
-
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
-
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
+            <div className=' flex flex-col sm:flex-row lg:pt-16 w-screen px-10'>
+                <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
+                    <h1 className=' text-5xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
                     
-
+                    <div className="text-stone-600">
+                        <h2 className="">Lex Pomales</h2>
+                        <h3 className="text-xs">Date and time</h3>
                     </div>
                 </div>
+                <div className=' h-96 sm:w-1/2  aspect-square relative bg-lime-500 '>
+                    <Image
+                    src='/images/theFantasyFlyerLogo.png'
+                    alt='Football field and stadium at the 50 yard line'
+                    fill
+                    className='w-full h-full object-cover '
+                    />
+                </div>
+            </div>
 
+            <div className='flex flex-col w-full lg:flex-row px-10'>
+                <div className='lg:w-4/5 flex flex-col'>
+                   
+                    <div className='flex flex-col w-full lg:pr-20 pt-16'>
+                        <p className=" text-lg ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ut porttitor leo a diam. Eu ultrices vitae auctor eu augue ut. A scelerisque purus semper eget duis at. Elementum sagittis vitae et leo duis. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum. Platea dictumst quisque sagittis purus. Id ornare arcu odio ut sem nulla. Id interdum velit laoreet id. Ipsum dolor sit amet consectetur adipiscing elit ut.
 
+                            Volutpat commodo sed egestas egestas fringilla phasellus faucibus. In mollis nunc sed id semper. Egestas pretium aenean pharetra magna. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Pellentesque diam volutpat commodo sed egestas egestas fringilla. Sagittis vitae et leo duis ut diam quam nulla. Luctus accumsan tortor posuere ac ut consequat semper. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Cursus metus aliquam eleifend mi in nulla posuere. Elementum nisi quis eleifend quam adipiscing vitae proin. Auctor elit sed vulputate mi sit amet. Tortor posuere ac ut consequat semper viverra nam libero justo. Elit ut aliquam purus sit amet luctus venenatis lectus magna. Sagittis id consectetur purus ut faucibus. Pharetra vel turpis nunc eget lorem dolor sed viverra. Maecenas sed enim ut sem viverra aliquet eget sit. Neque volutpat ac tincidunt vitae semper.
+
+                            Adipiscing tristique risus nec feugiat in. Orci dapibus ultrices in iaculis nunc. Arcu non odio euismod lacinia. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Auctor augue mauris augue neque gravida in. Sed pulvinar proin gravida hendrerit. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Urna id volutpat lacus laoreet non curabitur gravida. Nunc vel risus commodo viverra maecenas accumsan lacus. Rutrum quisque non tellus orci ac auctor augue. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui.
+                        </p>  
+                   
+                        <div className="w-full  pt-16 pb-10">
+                            <h1 className="text-stone-600 text-3xl pb-10">Comments</h1>
+                            <div className="flex flex-row h-36 ">
+                                <div className="w-[85%] border"></div>
+                                <div className="w-[15%] flex flex-col justify-center px-6">
+                                    <Link href={"/"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-5">
+
+                             <div className="flex flex-col">
+                                <div className="text-stone-600">
+                                    <h2 className="">Lex Pomales</h2>
+                                    <h3 className="text-xs">Date and time</h3>
+                                </div>
+                                <div className="text-left pt-2">lksajdhfladskjfhadslkjfhasdlkfjhasdlkfjh</div>
+                             </div>
+
+                             <div className="flex flex-col">
+                                <div className="text-stone-600">
+                                    <h2 className="">Lex Pomales</h2>
+                                    <h3 className="text-xs">Date and time</h3>
+                                </div>
+                                <div className="text-left pt-2">lksajdhfladskjfhadslkjfhasdlkfjhasdlkfjh</div>
+                             </div>
+
+                             <div className="flex flex-col">
+                                <div className="text-stone-600">
+                                    <h2 className="">Lex Pomales</h2>
+                                    <h3 className="text-xs">Date and time</h3>
+                                </div>
+                                <div className="text-left pt-2">lksajdhfladskjfhadslkjfhasdlkfjhasdlkfjh</div>
+                             </div>
+
+                             <div className="flex flex-col">
+                                <div className="text-stone-600">
+                                    <h2 className="">Lex Pomales</h2>
+                                    <h3 className="text-xs">Date and time</h3>
+                                </div>
+                                <div className="text-left pt-2">lksajdhfladskjfhadslkjfhasdlkfjhasdlkfjh</div>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div className='pt-10 md:pt-0 md:w-full lg:w-1/5 flex flex-col md:flex-row lg:flex-col md:px-10 lg:px-0'>
 
                     <div className='w-full  text-left flex flex-col md:pt-14 md: lg:w-full'>
@@ -200,8 +178,12 @@ export default function News() {
                             </div>
                         </div> 
                     </div>
-                </div>
+                    </div>
+
+                
             </div>
+
+
         </main>
     )
 }
