@@ -139,7 +139,7 @@ export default function Home() {
       </div>
       <div className='pt-10 md:pt-0 md:w-full lg:w-1/5 flex flex-col md:flex-row lg:flex-col'>
         <div className='w-full  text-left flex flex-col md:pt-14 md:w-1/2 lg:w-full'>
-            <h3 className='text-xs text-stone-400'>What's hot</h3>
+            <h3 className='text-xs text-stone-400'>What&apos;s hot</h3>
             <h1 className='font-semibold text-2xl pb-6  md:pb-6 '>Most Popular</h1>
             <div className='flex flex-col gap-4'>
 
