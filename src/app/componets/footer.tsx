@@ -38,7 +38,7 @@ export default function Footer() {
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Footbal:101</Link>
-                            <Link href="/" className="hover:underline">Log-in</Link>
+                            <Link href="/login" className="hover:underline">Log-in</Link>
                         </div>
                     }
                     <div className="flex flex-row  border-b justify-between  pt-8 items-center pb-1" onClick={() => { setIsSocialExpanded(!isSocialExpanded)}}>
@@ -85,7 +85,7 @@ export default function Footer() {
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Football:101</Link>
-                            <Link href="/" className="hover:underline">Log-in</Link>
+                            <Link href="/login" className="hover:underline">Log-in</Link>
                         </div>
                         <div className='flex flex-col font-light gap-2 '>
                             <Link href={'https://www.instagram.com/thefantasyflyer/'} className="hover:underline">INSTAGRAM</Link> 

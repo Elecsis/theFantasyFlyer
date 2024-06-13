@@ -14,7 +14,7 @@ export default function Navbar() {
                     <h1 className="hidden lg:flex text-4xl text-lime-500">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
-                    <Link href={"/"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link> 
+                    <Link href={"/login"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link> 
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
                     </div>
@@ -35,7 +35,7 @@ export default function Navbar() {
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                     <Link href={"/research"} className="hover:underline">Research</Link>
                     <Link href={"/fantasy"} className="f">Fantasy Football:101</Link>
-                    <Link href={"/"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in</Link>
+                    <Link href={"/login"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in</Link>
                 </div>
             </nav>
         </>
