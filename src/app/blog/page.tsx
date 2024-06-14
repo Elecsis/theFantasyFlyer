@@ -36,11 +36,11 @@ export default function Blog() {
                             Adipiscing tristique risus nec feugiat in. Orci dapibus ultrices in iaculis nunc. Arcu non odio euismod lacinia. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Auctor augue mauris augue neque gravida in. Sed pulvinar proin gravida hendrerit. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Ac turpis egestas maecenas pharetra convallis posuere morbi leo. Urna id volutpat lacus laoreet non curabitur gravida. Nunc vel risus commodo viverra maecenas accumsan lacus. Rutrum quisque non tellus orci ac auctor augue. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui.
                         </p>  
                    
-                        <div className="w-full  pt-16 pb-10">
+                        <div className="w-full  pt-16 pb-10 flex flex-col">
                             <h1 className="text-stone-600 text-3xl pb-10">Comments</h1>
-                            <div className="flex flex-row h-36 ">
-                                <div className="w-[85%] border"></div>
-                                <div className="w-[15%] flex flex-col justify-center px-6">
+                            <div className="flex flex-col md:flex-row h-36 ">
+                                <input className="md:w-[85%]  h-full border"></input>
+                                <div className="w-[50%] md:w-[15%] flex flex-col justify-center pt-10 md:pt-0 md:px-6">
                                     <Link href={"/"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</Link>
                                 </div>
                             </div>

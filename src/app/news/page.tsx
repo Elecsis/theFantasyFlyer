@@ -14,25 +14,7 @@ export default function News() {
                     <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0'>
 
                     <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
-                            <Image
-                                src='/images/coquiIcon.jpg'
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full object-cover '
-                            />
-                        </div>
-                        <div className='flex flex-col justify-between w-full md:px-10 '>
-                            <h3 className='text-stone-400'>Date and time</h3>
-                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
-                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
-                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
-                        </div>
-                    </div>
-
-
-                    <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
+                        <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                             <Image
                                 src='/images/coquiIcon.jpg'
                                 alt='Football field and stadium at the 50 yard line'
@@ -49,7 +31,7 @@ export default function News() {
                     </div>
 
                     <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
+                        <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                             <Image
                                 src='/images/coquiIcon.jpg'
                                 alt='Football field and stadium at the 50 yard line'
@@ -66,7 +48,7 @@ export default function News() {
                     </div>
 
                     <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
+                        <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                             <Image
                                 src='/images/coquiIcon.jpg'
                                 alt='Football field and stadium at the 50 yard line'
@@ -83,7 +65,7 @@ export default function News() {
                     </div>
 
                     <div className=' flex flex-col md:flex-row  '>
-                        <div className=' md:w-72 md:h-72 relative bg-lime-500 '>
+                        <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                             <Image
                                 src='/images/coquiIcon.jpg'
                                 alt='Football field and stadium at the 50 yard line'
@@ -97,6 +79,28 @@ export default function News() {
                             <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
                             <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
                         </div>
+                    </div>
+
+                    <div className=' flex flex-col md:flex-row  '>
+                        <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
+                            <Image
+                                src='/images/coquiIcon.jpg'
+                                alt='Football field and stadium at the 50 yard line'
+                                fill
+                                className='w-full h-full object-cover '
+                            />
+                        </div>
+                        <div className='flex flex-col justify-between w-full md:px-10 '>
+                            <h3 className='text-stone-400'>Date and time</h3>
+                            <h1 className=' text-xl font-semibold'>kjdlgkj kljdnv jko ojdhf oidf oijdf </h1>
+                            <p className='text-md  '>nflkjsdnbvlksdfjblsdfjhgb fhg fkjhasd fkjahsdg fkjasdhgf kjasdhgf kjsadhgf ksajdhgf kasjdhgf kjasdhfg kjsadhfg kjhsadfg kjdsahfg kjasdhfg kdsajhfg dsakjfhg dsakjhfg sdkjfg jd f df kdjshf dhfjhd hfgdkjhfg dkjfg</p>
+                            <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-row w-full justify-between pl-10 pr-20'>
+                            <button className='bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white w-24 text-center '>Previous</button>
+                            <button className='bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white w-24 text-center'>Next</button>
                     </div>
                     
 

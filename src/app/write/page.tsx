@@ -22,7 +22,7 @@ export default function Write() {
                 <ImageIconTwo/>
                 <VideoIcon/>
             </div>
-            <div className="bg-white h-full rounded-lg text-xl"  placeholder="Write the post.........">
+            <div className="bg-white h-full  "  placeholder="Write the post.........">
                 <ReactQuill
                     placeholder={"Write Post ............"}
                     value={value}
