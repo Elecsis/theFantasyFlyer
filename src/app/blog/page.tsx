@@ -15,7 +15,7 @@ export default function Blog() {
                         <h3 className="text-xs">Date and time</h3>
                     </div>
                 </div>
-                <div className=' h-96 sm:w-1/2  aspect-square relative bg-lime-500 '>
+                <div className='w-full h-96 sm:w-1/2  aspect-square relative bg-lime-500 '>
                     <Image
                     src='/images/theFantasyFlyerLogo.png'
                     alt='Football field and stadium at the 50 yard line'

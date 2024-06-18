@@ -10,7 +10,7 @@ export default function Navbar() {
         <>
             <nav className="flex flex-row w-min-screen bg-white text-black items-center justify-between px-4 lg:px-10 py-3 relative   z-50">
                 <Link href={"/"} className="lg:pl-3  font-medium flex flex-row" onClick={() =>{ setIsMobileMenuExpanded(false)}}>
-                    <h1 className="flex text-xl sm:text-2xl md:text-xl lg:hidden text-lime-500" >The Fantasy Flyer</h1>
+                    <h1 className="flex text-xl sm:text-2xl md:text-sm lg:hidden text-lime-500" >The Fantasy Flyer</h1>
                     <h1 className="hidden lg:flex text-4xl text-lime-500">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
@@ -30,7 +30,7 @@ export default function Navbar() {
                         </>
                     }
                 </div>
-                <div className="hidden md:flex  md:text-md flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
+                <div className="hidden md:flex  md:text-base lg:text-xl flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
                     <Link href={"/news"} className="hover:underline">News & Blog</Link>
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                     <Link href={"/research"} className="hover:underline">Research</Link>

@@ -15,7 +15,7 @@ export default function Footer() {
         <form action="">
             <div className='lg:hidden '>
                 <div className=" w-full bg-white  text-black">
-                    <h1 className="text-center bg-white  text-4xl text-lime-500 pb-7 px-16 leading-[43px] ">The Fantasy Flyer</h1>
+                    <h1 className="text-center bg-white text-4xl  md:text-5xl text-lime-500 pb-7 px-16 leading-[43px] ">The Fantasy Flyer</h1>
                     
                 </div>
                 <div className="bg-white text-black flex flex-col items-center px-8">
