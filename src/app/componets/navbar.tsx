@@ -4,7 +4,7 @@ import MobileHamburgerMenuSvg from "../../../public/svgs/mobile_hamburger_menu"
 import { useState } from "react"
 import LogoutButton from "./LogoutButton"
 
-export default async function Navbar() {
+export default function Navbar() {
     const [ isMoiblieMenuExpanded, setIsMobileMenuExpanded] = useState(false)
 
     return (
