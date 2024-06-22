@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Kameron } from 'next/font/google'
 import Navbar from './componets/navbar'
 import Footer from './componets/footer'
+import AuthProvider from '@/utils/AuthProvider'
 
 const kameron = Kameron({
    subsets: ['latin'],
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en" className='bg-white'>
       <body className={kameron.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+        <AuthProvider>
+          <Navbar/>
+          {children}
+          <Footer/>
+        </AuthProvider>
       </body>
     </html>
   )

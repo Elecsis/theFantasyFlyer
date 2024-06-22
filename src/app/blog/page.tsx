@@ -21,6 +21,8 @@ export default function Blog() {
                     alt='Football field and stadium at the 50 yard line'
                     fill
                     className='w-full h-full object-cover '
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority= {true }
                     />
                 </div>
             </div>
