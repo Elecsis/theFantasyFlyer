@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import React from "react";
 import SignInWithGoogle from "../componets/GoogleSignInButton";
 import { redirect } from "next/navigation";
+import SignInForm from "../componets/SignInForm";
 
 export default async function Login() {
     const session = await getServerSession(authOptions);
@@ -16,9 +17,14 @@ export default async function Login() {
         <main className="flex w-full h-full bg-lime-500 border border-white border-t-2 border-b-2  text-black justify-center p-20">
        
             <div className="flex h-96 w-72 rounded-lg bg-white text-center  flex-col justify-evenly ">
-                <h1 className="">Login</h1>
+                <h1 className="pb-[8%] text-2xl">Login</h1>
+                <SignInForm/>
+                <div className="relative flex  items-center px-[10%]">
+                    <div className="flex-grow border-t border-gray-800"></div>
+                    <span className="flex-shrink mx-4 text-black">or</span>
+                    <div className="flex-grow border-t border-gray-800"></div>
+                </div>
                 <SignInWithGoogle/>
-                <button className="bg-lime-500 hover:bg-lime-600 text-white self-center  py-2 px-4 rounded w-4/5">Sign in with Email</button>
             </div> 
             
         </main>
