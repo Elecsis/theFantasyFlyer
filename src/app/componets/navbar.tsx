@@ -3,6 +3,7 @@ import Link from "next/link"
 import MobileHamburgerMenuSvg from "../../../public/svgs/mobile_hamburger_menu"
 import { useState } from "react"
 import LogoutButton from "./LogoutButton"
+import LogInOutButton from "./LogInOutButton"
 
 export default function Navbar() {
     const [ isMoiblieMenuExpanded, setIsMobileMenuExpanded] = useState(false)
@@ -15,8 +16,7 @@ export default function Navbar() {
                     <h1 className="hidden lg:flex text-4xl text-lime-500">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
-                    <Link href={"/login"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link>
-                    <LogoutButton/> 
+                    {/* <LogInOutButton/> */}
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
                     </div>
