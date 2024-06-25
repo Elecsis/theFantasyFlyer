@@ -3,7 +3,6 @@ import { authOptions } from "@/utils/auth";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import SignInWithGoogle from "../componets/GoogleSignInButton";
-import SignInForm from "../componets/SignInForm";
 
 
 export default async function Login() {

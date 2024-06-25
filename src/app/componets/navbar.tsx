@@ -17,7 +17,7 @@ export default function Navbar() {
                 <div className="md:hidden flex flex-row items-center gap-4 ">
                    
                     <Link href={"/login"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link>
-                    
+                    <LogoutButton/>
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
                     </div>
