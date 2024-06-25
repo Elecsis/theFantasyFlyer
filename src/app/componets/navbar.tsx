@@ -41,7 +41,7 @@ export default function Navbar() {
                     <Link href={"/fantasy"} className="f">Fantasy Football:101</Link>
                     {/* <Link href={"/login"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in</Link>
                     <LogoutButton/> */}
-                    <LogInOutButton/>
+                    {/* <LogInOutButton/> */}
                 </div>
             </nav>
         </>
