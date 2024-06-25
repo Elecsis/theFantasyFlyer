@@ -1,6 +1,5 @@
 
-import { authOptions } from "@/utils/auth";
-import { getServerSession } from "next-auth";
+'use client'
 import { redirect } from "next/navigation";
 import SignInWithGoogle from "../componets/GoogleSignInButton";
 import { useSession } from "next-auth/react";
