@@ -3,10 +3,12 @@ import { authOptions } from "@/utils/auth";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import SignInWithGoogle from "../componets/GoogleSignInButton";
+import { useSession } from "next-auth/react";
 
 
 export default async function Login() {
-    const session = await getServerSession(authOptions);
+    const session = await useSession();
+    
    
     if(session) {
         return redirect('/')
