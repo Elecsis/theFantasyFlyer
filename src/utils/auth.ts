@@ -3,10 +3,14 @@ import GoogleProvider from "next-auth/providers/google";
 import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import prisma from "./db";
+import { userAgent } from "next/server";
 
 
 
 export const authOptions = {
+    session: {
+      strategy: 'jwt'
+    },
     adapter: PrismaAdapter(prisma) as any,
     providers: [
         GoogleProvider({
@@ -30,8 +34,22 @@ export const authOptions = {
               }
             },
             from: process.env.EMAIL_FROM
-          })
+          })  
     ],
+    callbacks: {
+      async signIn({ user, account, profile, email, credentials }) {
+        return user.id
+      },
+      async redirect({  baseUrl }) {
+        return baseUrl
+      },
+      async session({ session }) {
+        return session
+      },
+      async jwt({ token,  }) {
+        return token
+      }
+  }
   
 
    
