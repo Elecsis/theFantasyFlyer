@@ -5,9 +5,10 @@ import { useState } from "react"
 import LogoutButton from "./LogoutButton"
 import LogInOutButton from "./LogInOutButton"
 
-export default function Navbar() {
+export default  function Navbar() {
     const [ isMoiblieMenuExpanded, setIsMobileMenuExpanded] = useState(false)
- 
+    
+   
     return (
         <>
             <nav className="flex flex-row w-min-screen bg-white text-black items-center justify-between px-4 lg:px-10 py-3 relative   z-50">
@@ -17,8 +18,7 @@ export default function Navbar() {
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
                    
-                    <Link href={"/login"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link>
-                    <LogoutButton/>
+                <LogInOutButton/>
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
                     </div>
@@ -39,15 +39,16 @@ export default function Navbar() {
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                     <Link href={"/research"} className="hover:underline">Research</Link>
                     <Link href={"/fantasy"} className="f">Fantasy Football:101</Link>
-                    {/* <Link href={"/login"} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white">Log-in</Link>
-                    <LogoutButton/> */}
-                    {/* <LogInOutButton/> */}
+                    
+                    <LogInOutButton/>
                 </div>
             </nav>
         </>
     )
+
+
+
+
 }
 
-function getServerSession(authOptions: any) {
-    throw new Error("Function not implemented.")
-}
+
