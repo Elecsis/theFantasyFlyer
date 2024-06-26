@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Kameron } from 'next/font/google'
+import Navbar from './componets/navbar'
 import Footer from './componets/footer'
 import AuthProvider from '@/utils/AuthProvider'
 
@@ -24,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className='bg-white'>
       <body className={kameron.className}>
         <AuthProvider>
-         
+          <Navbar/>
           {children}
           <Footer/>
         </AuthProvider>
