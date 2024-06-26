@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import Link from 'next/link'
+
 import FeaturedHero from './componets/Featured'
 import MainPost from './componets/MainPost'
 import MainCategories from './componets/MainCategroies'
