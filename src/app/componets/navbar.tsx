@@ -2,7 +2,6 @@
 import Link from "next/link"
 import MobileHamburgerMenuSvg from "../../../public/svgs/mobile_hamburger_menu"
 import { useState } from "react"
-import LogoutButton from "./LogoutButton"
 import LogInOutButton from "./LogInOutButton"
 
 export default  function Navbar() {
@@ -45,10 +44,6 @@ export default  function Navbar() {
             </nav>
         </>
     )
-
-
-
-
 }
 
 
