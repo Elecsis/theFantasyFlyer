@@ -25,6 +25,8 @@ export const POST = async (req:any) => {
 
     const session = await getServerSession(authOptions)
     const email = session?.user?.email
+    console.log('req:',req)
+    console.log('email:',email)
     if(!session){
         return new NextResponse(
             JSON.stringify({message: 'Not Authenticated'}, {status: 401}as any)
@@ -33,7 +35,7 @@ export const POST = async (req:any) => {
 
  
     try{
-        const body= await req.json()
+        const body = await req.json()
         const comment = await prisma.comment.create({data: {...body, userEmail: email}})
         return new NextResponse(JSON.stringify(comment, {status: 200}as any))
     } catch (err) {
