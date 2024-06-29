@@ -32,14 +32,14 @@ export default async function CardList( page: any, cat: any  ) {
         <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0'>
             { data.posts?.map((item:any)=> (
             <div className=' flex flex-col md:flex-row  ' key={`item._id`}>
-                <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
+               {item.img && ( <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                     <Image
                     src='/images/coquiIcon.jpg'
                     alt='Football field and stadium at the 50 yard line'
                     fill
                     className='w-full h-full object-cover '
                     />
-                </div>
+                </div>)}
                 <div className='flex flex-col justify-between w-full md:px-10  '>
                     <div className="flex flex-row w-full gap-9 ">
                         <h3 className='text-black text-xl self-center'>{item.createdAt.substring(0,10)}</h3>
@@ -47,7 +47,7 @@ export default async function CardList( page: any, cat: any  ) {
                     </div>
                     <h1 className=' text-xl font-semibold'>{item.title}</h1>
                     <p className='text-md  '>{item.desc}</p>
-                    <Link href={"/blog"} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
+                    <Link href={`/blog/${item.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
                 </div>
             </div>
             ))}
