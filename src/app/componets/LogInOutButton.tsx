@@ -8,13 +8,10 @@ export default  function LogInOutButton () {
    
     return <>
         { status === "unauthenticated" ? (
-            <Link href={"/login"} className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log-in</Link>
+            <Link href={"/login"} className="w-20 text-xs bg-lime-500 hover:bg-lime-500 p-2 text-center rounded text-white lg:text-lg">Log-in</Link>
         ) : (
-            <button onClick={() => signOut({callbackUrl: `${window.location.origin}/login`}) } className="text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log Out</button> 
+            <div onClick={() => signOut({callbackUrl: `${window.location.origin}/login`}) } className="w-full text-xs bg-lime-500 hover:bg-lime-500 p-2 rounded text-white">Log Out</div> 
         )}
     </>
     
 }
-
-
-

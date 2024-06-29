@@ -6,7 +6,6 @@ import LogInOutButton from "./LogInOutButton"
 
 export default  function Navbar() {
     const [ isMoiblieMenuExpanded, setIsMobileMenuExpanded] = useState(false)
-    
    
     return (
         <>
@@ -16,7 +15,6 @@ export default  function Navbar() {
                     <h1 className="hidden lg:flex text-4xl text-lime-500">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
-                   
                 <LogInOutButton/>
                     <div onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                         <MobileHamburgerMenuSvg/>
@@ -38,7 +36,6 @@ export default  function Navbar() {
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                     <Link href={"/research"} className="hover:underline">Research</Link>
                     <Link href={"/fantasy"} className="f">Fantasy Football:101</Link>
-                    
                     <LogInOutButton/>
                 </div>
             </nav>

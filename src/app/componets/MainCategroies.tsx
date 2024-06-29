@@ -21,7 +21,7 @@ export default async function MainCategories() {
             </div> 
             <div className='grid grid-cols-1 gap-4 w-full  sm:grid-cols-2 md:grid-cols-4  px-10 lg:px-0 lg:text-sm'>
                 {data?.map((item:any)=> (
-                    <Link href={"/news"} key={`item._id`} className={`${item.color} md:w-full  p-2 rounded-md text-white text-center`}>{item.title}</Link>
+                    <Link href={`/news?cat=${item.title}`} key={`item._id`} className={`${item.color} md:w-full  p-2 rounded-md text-white text-center`}>{item.title}</Link>
                 ))}
             </div>
         </div>
