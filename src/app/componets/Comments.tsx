@@ -24,7 +24,7 @@ const Comments = ({postSlug}: any) => {
    
     const {data, mutate,  isLoading} = useSWR(`https://www.thefantasyflyer.com/api/comments?postSlug=${postSlug}`, fetcher)
 
-    const [desc, setDesc] = useState<String>()
+    const [desc, setDesc] = useState('')
 
     const handleSubmit = async () => {
         await fetch(
@@ -42,7 +42,7 @@ const Comments = ({postSlug}: any) => {
                 <h1 className="text-stone-600 text-3xl pb-10">Comments</h1>
                 {status === "authenticated" ? (
                     <div className="flex flex-col md:flex-row h-36 ">
-                        <input className="md:w-[85%]  h-full border" onChange={(e)=> setDesc(e.target.value)}></input>
+                        <textarea className="md:w-[85%]  h-full border" onChange={(e)=> setDesc(e.target.value)}/>
                         <div className="w-[50%] md:w-[15%] flex flex-col justify-center pt-10 md:pt-0 md:px-6">
                              <button  onClick={handleSubmit} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</button>
                         </div>
