@@ -1,5 +1,5 @@
 
-import FeaturedHero from './componets/MainFeatured'
+import FeaturedHero from './componets/MainFeaturedHero'
 import MainPost from './componets/MainPost'
 import MainCategories from './componets/MainCategroies'
 import MainPostBody from './componets/MainPostBody'

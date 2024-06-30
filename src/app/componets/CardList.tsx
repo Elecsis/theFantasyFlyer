@@ -47,18 +47,18 @@ export default async function CardList( page: any, cat: any  ) {
    
 
     return (
-        <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0'>
+        <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0 lg:pr-10'>
         { data.posts?.map((item:any)=> (
         <div className=' flex flex-col md:flex-row  ' key={`item._id`}>
            {item.img && ( <div className='hidden md:block aspect-square md:h-72 relative bg-lime-500 '>
                 <Image
-                src='/images/coquiIcon.jpg'
+                src={item.img}
                 alt='Football field and stadium at the 50 yard line'
                 fill
                 className='w-full h-full object-cover '
                 />
             </div>)}
-            <div className='flex flex-col justify-between w-full md:px-10  '>
+            <div className='flex flex-col justify-between w-full md:px-10  shadow-lg'>
                 <div className="flex flex-row w-full gap-9 ">
                     <h3 className='text-black text-xl self-center'>{item.createdAt.substring(0,10)}</h3>
                     <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-center text-white ${getCategoryColorClass(item.catSlug)}`}>{item.catSlug}</div>
