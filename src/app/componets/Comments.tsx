@@ -16,21 +16,14 @@ const fetcher = async (url: any) => {
     return data
 }
 
-
-
 const Comments = ({postSlug}: any) => {
-
-    
     
     const {status} = useSession()
-
-    console.log(status)
    
    
     const {data, mutate,  isLoading} = useSWR(`https://www.thefantasyflyer.com/api/comments?postSlug=${postSlug}`, fetcher)
 
     const handleSubmit = async () => {
-        console.log(desc , postSlug)
         await fetch(
             "https://www.thefantasyflyer.com/api/comments",{
                 method: "POST",
@@ -56,17 +49,7 @@ const Comments = ({postSlug}: any) => {
                 ) : (
                     <Link href={'/login'}  className="text-lime-500  hover:underline"> Login to write a comment</Link>
                 )}
-                
-                {/* <div className="flex flex-col md:flex-row h-36 w-full">
-                        <textarea className="md:w-[85%]  h-full border" onChange={(e)=> setDesc(e.target.value)}/>
-                        <div className="w-[50%] md:w-[15%] flex flex-col justify-center pt-10 md:pt-0 md:px-6">
-                             <button   onClick={handleSubmit} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</button>
-                        </div>
-                    </div> */}
-                
-                
             </div>
-
             <div className="flex flex-col gap-5">
                 {isLoading
                 ?"Loading" 
@@ -79,8 +62,6 @@ const Comments = ({postSlug}: any) => {
                         <div className="text-left pt-2">{item.desc}</div>
                     </div>
                 ))}
-                
-            
             </div>
         </div>
     )
