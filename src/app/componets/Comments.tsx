@@ -23,6 +23,9 @@ const Comments = ({postSlug}: any) => {
     
     
     const {status} = useSession()
+
+    console.log(status)
+   
    
     const {data, mutate,  isLoading} = useSWR(`https://www.thefantasyflyer.com/api/comments?postSlug=${postSlug}`, fetcher)
 

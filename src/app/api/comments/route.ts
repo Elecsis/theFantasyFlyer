@@ -24,14 +24,14 @@ export const GET = async (req:any,) => {
 
 export const POST = async (req:any) => {
 
-    const session = await getSession()
+    const session = await getAuthSession()
     
     if(!session){
         return new NextResponse(
             JSON.stringify({message: 'Not Authenticated'}, {status: 401}as any)
         )
     }
- 
+    console.log(session.user )
     try{
         const body = await req.json()
         const comment = await prisma.comment.create({data: {...body, userEmail: session?.user?.email}})
