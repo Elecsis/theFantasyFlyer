@@ -31,6 +31,7 @@ const Comments = ({postSlug}: any) => {
             }
         )
         mutate();
+        setDesc('')
     }
 
     const [desc, setDesc] = useState('')
@@ -41,7 +42,7 @@ const Comments = ({postSlug}: any) => {
                 <h1 className="text-stone-600 text-3xl pb-10">Comments</h1>
                 {status === "authenticated" ? (
                     <div className="flex flex-col md:flex-row h-36 w-full">
-                        <textarea className="md:w-[85%]  h-full border" onChange={(e)=> setDesc(e.target.value)}/>
+                        <textarea value={desc} className="md:w-[85%]  h-full border" placeholder="Write a comment ......." onChange={(e)=> setDesc(e.target.value)}/>
                         <div className="w-[50%] md:w-[15%] flex flex-col justify-center pt-10 md:pt-0 md:px-6">
                              <button  onClick={handleSubmit} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</button>
                         </div>
