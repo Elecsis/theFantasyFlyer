@@ -11,6 +11,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { app } from "@/utils/firebase";
 
+
 const storage = getStorage(app);
 
 export default function Write() {
@@ -21,14 +22,43 @@ export default function Write() {
     const [media, setMedia] = useState('');
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('');
+    const [catSlug, setCatSlug] = useState('Category');
+    const [isOpen, setIsOpen] = useState(false);
+    const list = [
+        {
+            "category": "News"
+        },
+        {
+            "category": "Blog"
+        },
+        {
+            "category": "Match-Ups"
+        },
+        {
+            "category": "Start/Sit"
+        },
+        {
+            "category": "The Waiver Wire"
+        },
+        {
+            "category": "Draft Stratigies"
+        },
+        {
+            "category": "Team Analysis"
+        },
+        {
+            "category": "Player Rankings"
+        }
+    ]
+    
     const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
 
     useEffect(() => {
         const upload = () => {
             if (!file) return;
-            const name = new Date().getTime + file.name as unknown as File;
-            const storageRef = ref(storage, 'images/rivers.jpg');
-            const uploadTask = uploadBytesResumable(storageRef, name);
+            const name = new Date().getTime + file.name;
+            const storageRef = ref(storage, name);
+            const uploadTask = uploadBytesResumable(storageRef, file);
 
             uploadTask.on('state_changed', 
                 (snapshot) => {
@@ -85,16 +115,17 @@ export default function Write() {
             ),
             }
         )
-        setTitle('')
-        setValue('')
-        setMedia('')
+        setTitle('');
+        setValue('');
+        setMedia('');
+        setCatSlug('Category')
         
     }
 
     return (
-        <main className="flex w-full bg-lime-500 text-black flex-col p-10 h-screen">
+        <main className="flex flex-col w-full bg-lime-500 text-black  p-10 h-auto">
             <input className="px-5 text-5xl rounded-lg" type="text" placeholder="Title" onChange={ e => setTitle(e.target.value)}/>
-            <div className="flex flex-row p-5 gap-5 text-white">
+            <div className="flex flex-row   text-white  w-full justify-between self-center pr-[29%] pt-5">
                 <input
                     type="file"
                     id="image"
@@ -103,23 +134,46 @@ export default function Write() {
                             setFile(e.target.files[0]);
                         }
                     }}
-                    className="invisible"
+                    className="invisible w-0" 
                 />
                 <label htmlFor="image">
                     <ImageIconOne />
                 </label>
                 <ImageIconTwo />
                 <VideoIcon />
-            </div>
-            <div className="bg-white h-full" placeholder="Write the post.........">
+            </div>  
+            <div className="bg-white h-full " placeholder="Write the post.........">
                 <ReactQuill
                     placeholder={"Write Post ............"}
                     value={value}
                     onChange={setValue}
                 />
             </div>
+            <div className="relative flex flex-col self-center  w-[220px] h-[220px] py-5">
+                <button onClick={()=> setIsOpen((s) =>!s)} className="w-full tracking-wide flex flex-row  rounded-lg border-2 justify-between px-4 py-1">
+                    {catSlug}
+                    {!isOpen ?(
+                        <div className="text-white">{'+'}</div>
+                    ) : (
+                        <div>{'-'}</div>
+                    )}
+                </button>
+                {!isOpen && (
+                    <div className=" absolute top-[55px] right-[12px] bg-white border border-lime-200 rounded-lg">
+                        {list.map((item, i) =>(
+                            <div className="w-[200px] h-auto hover:bg-lime-500 hover:text-white " key={i} onClick={ () => {setCatSlug(item.category ), setIsOpen((s) =>!s)} }>
+                                <h2 className="flex justify-center">{item.category}</h2>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+                
+            
             <div className="flex pt-10 w-full justify-center">
-                <button onClick={handleSubmit}  className="bg-white text-black hover:bg-lime-600 self-center py-2 px-4 rounded w-[33%]">Publish</button>
+                <button onClick={handleSubmit}  className="bg-white text-black hover:bg-lime-600 self-center py-2 px-4 rounded h-12 w-[33%] border-solid border-white">
+                    Publish
+                </button>
             </div>
         </main>
     );
