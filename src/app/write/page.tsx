@@ -87,13 +87,13 @@ export default function Write() {
        file && upload();
     }, [file]);
 
-    if(status === "loading"){
-        return <div className="w-screen h-screen">Loading .....</div>
-    }    
+    // if(status === "loading"){
+    //     return <div className="w-screen h-screen">Loading .....</div>
+    // }    
 
-    if(status === "unauthenticated"){
-        router.push('/login')
-    }  
+    // if(status === "unauthenticated"){
+    //     router.push('/login')
+    // }  
 
 
 
@@ -109,7 +109,7 @@ export default function Write() {
                     desc: value,
                     img: media,
                     slug: slugify(title),
-                    catSlug: "News",
+                    catSlug: catSlug,
                 }
             
             ),
@@ -150,7 +150,7 @@ export default function Write() {
                 />
             </div>
             <div className="relative flex flex-col self-center  w-[220px] h-[220px] py-5">
-                <button onClick={()=> setIsOpen((s) =>!s)} className="w-full tracking-wide flex flex-row  rounded-lg border-2 justify-between px-4 py-1">
+                <button onClick={()=> setIsOpen((s) =>!s)} className="w-full text-white tracking-wide flex flex-row  rounded-lg border-2 justify-between px-4 py-1">
                     {catSlug}
                     {!isOpen ?(
                         <div className="text-white">{'+'}</div>
