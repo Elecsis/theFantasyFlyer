@@ -54,9 +54,7 @@ export default function Write() {
                 }
             );
         };
-        if (file) {
-            upload();
-        }
+       file && upload();
     }, [file]);
 
     if(status === "loading"){
@@ -81,13 +79,12 @@ export default function Write() {
                     desc: value,
                     img: media,
                     slug: slugify(title),
-                    cat: "News",
+                    catSlug: "News",
                 }
             
             ),
             }
         )
-        console.log(res)
     }
 
     return (
