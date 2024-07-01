@@ -59,11 +59,22 @@ export default function Write() {
         }
     }, [file]);
 
+    if(status === "loading"){
+        return <div className="w-screen h-screen">Loading .....</div>
+    }    
+
+    if(status === "unauthenticated"){
+        router.push('/login')
+    }  
+
+
+
     const slugify = (str : string) => str.toLowerCase().trim().replace(/[^\w\s-]/g,"").replace(/[\s_-]+/g,"-").replace(/^-+|-+$/g,"");
 
     const handleSubmit = async () => {
+        console.log('started')
         const res = await fetch(
-            "https://www.thefantasyflyer.com/api/posts",{
+            "https://thefantasyflyer.com/api/posts",{
                 method: "POST",
                 body: JSON.stringify({
                     title ,
@@ -71,7 +82,9 @@ export default function Write() {
                     img: media,
                     slug: slugify(title),
                     cat: "News",
-                }),
+                }
+            
+            ),
             }
         )
         console.log(res)
@@ -119,10 +132,3 @@ export default function Write() {
 
 
 
-  // if(status === "loading"){
-    //     return <div className="w-screen h-screen">Loading .....</div>
-    // }    
-
-    // if(status === "unauthenticated"){
-    //     router.push('/login')
-    // }  
