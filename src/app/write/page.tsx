@@ -85,6 +85,10 @@ export default function Write() {
             ),
             }
         )
+        setTitle('')
+        setValue('')
+        setMedia('')
+        
     }
 
     return (

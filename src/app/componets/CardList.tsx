@@ -63,8 +63,9 @@ export default async function CardList( page: any, cat: any  ) {
                     <h3 className='text-black text-xl self-center'>{item.createdAt.substring(0,10)}</h3>
                     <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-center text-white ${getCategoryColorClass(item.catSlug)}`}>{item.catSlug}</div>
                 </div>
+                
                 <h1 className=' text-xl font-semibold'>{item.title}</h1>
-                <p className='text-md  '>{item.desc}</p>
+                <div dangerouslySetInnerHTML={{ __html:item.desc }} />
                 <Link href={`/blog/${item.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
             </div>
         </div>
