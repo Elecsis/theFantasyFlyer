@@ -74,7 +74,7 @@ export default function Write() {
     const handleSubmit = async () => {
         console.log('started')
         const res = await fetch(
-            "https://thefantasyflyer.com/api/posts",{
+            "https://www.thefantasyflyer.com/api/posts",{
                 method: "POST",
                 body: JSON.stringify({
                     title ,
