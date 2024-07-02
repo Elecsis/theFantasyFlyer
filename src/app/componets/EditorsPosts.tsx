@@ -37,8 +37,8 @@ export default  async function EditorsPosts () {
                 { data.map((item:any) => (
                     <div className='flex flex-col justify-between w-full ' key={item._id}>
                         <div className={`${getCategoryColorClass(item.catSlug)} text-xs w-[30%] rounded-full  text-center :`}>{item.catSlug}</div>
-                        <Link href={`/blog/${item.slug}`} className="hover:underline    md:text-left  ">
-                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 hover:underline-offset-4'>{item.title} </h1>
+                        <Link href={`/blog/${item.slug}`} className="hover:underline hover:underline-offset-4 hover:decoration-lime-500    md:text-left  ">
+                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 '>{item.title} </h1>
                         </Link>
                         <h3 className='text-stone-400 text-xs '>{item.createdAt.substring(0,10)}</h3>
                     </div>
