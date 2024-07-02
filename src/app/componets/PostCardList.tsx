@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from 'next/image';
-import Pagination from "./Pagination";
 import { normalize } from "path";
+import PostPagination from "./PostPagination";
 
 const getData = async (page: any, cat : any) => {
+    console.log(page,cat)
     const res = await fetch(`https://www.thefantasyflyer.com/api/posts?page=${page}&cat=${cat || ''}`, {
         cache: 'no-store',
     });
@@ -30,7 +31,7 @@ const getCategoryColorClass = (catSlug: string) => {
     return categoryColors[normalizedSlug] || 'bg-gray-500'; // Default color if catSlug doesn't match
 };
 
-export default async function CardList( page: any, cat: any  ) {
+export default async function PostCardList( page: any, cat: any  ) {
     
     const data = await getData(page.page, page.cat);
     const POST_PER_PAGE = 5;
@@ -71,7 +72,7 @@ export default async function CardList( page: any, cat: any  ) {
             </div>
         </div>
         ))}
-        <Pagination page={paginationProp} cat={cato} />
+        <PostPagination page={paginationProp} cat={cato} />
     </div>
     )
 

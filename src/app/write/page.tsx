@@ -87,13 +87,13 @@ export default function Write() {
        file && upload();
     }, [file]);
 
-    // if(status === "loading"){
-    //     return <div className="w-screen h-screen">Loading .....</div>
-    // }    
+    if(status === "loading"){
+        return <div className="w-screen h-screen">Loading .....</div>
+    }    
 
-    // if(status === "unauthenticated"){
-    //     router.push('/login')
-    // }  
+    if(status === "unauthenticated"){
+        router.push('/login')
+    }  
 
 
 
@@ -114,12 +114,13 @@ export default function Write() {
             
             ),
             }
+            
         )
+        console.log(res);
         setTitle('');
         setValue('');
         setMedia('');
-        setCatSlug('Category')
-        
+        setCatSlug('Category');
     }
 
     return (

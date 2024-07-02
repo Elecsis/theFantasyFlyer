@@ -23,8 +23,8 @@ const Blog = async( {params}: any) => {
                 <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
                     <h1 className=' text-5xl font-semibold'>{data.post.title} </h1>
                     
-                    <div className="flex flex-row gap-3">
-                        <div className="w-10 h-10 rounded-sm relative">
+                    <div className="flex flex-row gap-3 ">
+                        <div className="w-10 h-10 rounded-lg relative">
                             <Image
                                 src={data.post.user.image}
                                 alt='Football field and stadium at the 50 yard line'
@@ -39,12 +39,12 @@ const Blog = async( {params}: any) => {
                         </div>
                     </div>
                 </div>
-                {data?.post.img && (<div className='w-full h-96 sm:w-1/2  aspect-square relative bg-lime-500 '>
+                {data?.post.img && (<div className='w-full h-96 sm:w-1/2  aspect-square relative bg-lime-500 rounded-lg'>
                     <Image
                         src={data.post.img}
                         alt='Football field and stadium at the 50 yard line'
                         fill
-                        className='w-full h-full object-cover '
+                        className='w-full h-full object-cover rounded-lg'
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority= {true }
                     />

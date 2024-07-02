@@ -1,3 +1,4 @@
+
 import Link from 'next/link'
 
 const getData = async () => {
@@ -20,7 +21,7 @@ export default async function SideCategories() {
         <h1 className='font-semibold text-2xl pb-6  md:pb-4  '>Categories</h1>
             <div className='grid  gap-4 w-full  grid-cols-2 md:grid-cols-2 lg:grid-cols-1 lg:text-lg'>
                 {data?.map((item:any)=> (
-                    <Link href={`/news?cat=${item.title}`} key={`item._id`} className={`${item.color} md:w-full  p-2 rounded-full text-white text-center`}>{item.title}</Link>
+                    <Link href={`/news?cat=${item.title}`} key={item._id} className={`${item.color} md:w-full  p-2 rounded-full text-white text-center`}>{item.title}</Link>
                 ))}
             </div>
         </div>
