@@ -1,8 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Kameron } from 'next/font/google'
-import Footer from './componets/Footer'
 import AuthProvider from '@/utils/AuthProvider'
+import Footer from './componets/Footer'
 import Navbar from './componets/Navbar'
 
 const kameron = Kameron({
