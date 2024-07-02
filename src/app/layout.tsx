@@ -11,8 +11,8 @@ const kameron = Kameron({
   })
 
 export const metadata: Metadata = {
-  title: 'The Fanatasy Flyer',
-  description: 'We Fly High and Hunt Championships!',
+  title: 'The Fantasy Flyer',
+  description: 'We Fly High and Hunt Fantasy Football Championships!',
   manifest: '/favicon.ico',
 }
 

@@ -1,6 +1,6 @@
 
 import React from "react";
-import PostMainPostBody from "../componets/PostMainPostBody";
+import MainPostBody from "../componets/MainPostBody";
 
 
 export default function News({searchParams}: {searchParams: any}) {
@@ -16,7 +16,7 @@ export default function News({searchParams}: {searchParams: any}) {
                 <h1 className="drop-shadow-lg">{`${cat || 'All Posts'}`}</h1>
             </div>
             <div className='flex flex-col w-full lg:flex-row px-5 lg:px-10'>
-                <PostMainPostBody page={page} cat={cat} />
+                <MainPostBody page={page} cat={cat} />
             </div>
         </main>
     )
