@@ -19,7 +19,7 @@ const getCategoryColorClass = (catSlug: string) => {
     const categoryColors: { [cat: string]: string } = {
         'News': 'bg-rose-500',
         'Blog': 'bg-lime-500',
-        'MatchUps': 'bg-sky-500',
+        'Match-Ups': 'bg-sky-500',
         'Start/Sit': 'bg-amber-500',
         'The Waiver Wire': 'bg-emerald-500',
         'Draft Strategies': 'bg-cyan-500',
@@ -59,15 +59,15 @@ export default async function CardList( page: any, cat: any  ) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
             </div>)}
-            <div className='flex flex-col justify-between w-full md:px-10  shadow-lg rounded-r-lg py-4'>
+            <div className='flex flex-col justify-between w-full md:px-10  shadow-lg rounded-r-lg py-2'>
                 <div className="flex flex-row w-full justify-between p-3">
-                    <h3 className='text-black text-xl self-center '>{item.createdAt.substring(0,10)}</h3>
-                    <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-center text-white ${getCategoryColorClass(item.catSlug)}`}>{item.catSlug}</div>
+                    <h3 className='text-black text-lg  self-center '>{item.createdAt.substring(0,10)}</h3>
+                    <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-sm text-center text-white ${getCategoryColorClass(item.catSlug)}`}>{item.catSlug}</div>
                 </div>
                 
-                <h1 className='p-3 text-xl font-semibold'>{item.title}</h1>
-                <div className="p-3" dangerouslySetInnerHTML={{ __html:item.desc.substring(0,150)}} />
-                <Link href={`/blog/${item.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center ">Read More</Link>
+                <h1 className='p-3  font-semibold'>{item.title}</h1>
+                <div className="p-3 md:text-sm lg:text-lg" dangerouslySetInnerHTML={{ __html:item.desc.substring(0,150)}} />
+                <Link href={`/blog/${item.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center  pb-2">Read More</Link>
             </div>
         </div>
         ))}

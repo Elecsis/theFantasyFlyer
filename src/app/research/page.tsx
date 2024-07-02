@@ -1,9 +1,10 @@
 import React from "react";
+import ComingSoon from "../componets/CoomingSoon";
 
 export default function Research() {
     return (
         <main className=" h-screen">
-            <div>Research</div>
+           <ComingSoon/>
         </main>
     )
 }

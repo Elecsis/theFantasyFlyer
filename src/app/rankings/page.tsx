@@ -1,9 +1,10 @@
 import React from "react";
+import ComingSoon from "../componets/CoomingSoon";
 
 export default function Rankings() {
     return (
-        <main className=" h-screen">
-            <div>Rankings</div>
+        <main className="">
+           <ComingSoon/>
         </main>
     )
 }

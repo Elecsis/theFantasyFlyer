@@ -109,7 +109,10 @@ model Post {
   cat       Category  @relation(fields: [catSlug], references: [slug])
   userEmail String
   user      User      @relation( fields: [userEmail], references: [email])
-  comment Comment[]
+  comment   Comment[]
+  popular   Boolean   @default(false)
+  editor    Boolean   @default(false)
+  featured  Boolean   @default(false)
 }
 
 model Comment {

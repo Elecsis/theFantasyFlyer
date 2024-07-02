@@ -10,7 +10,7 @@ export default function Home({searchParams}: {searchParams: any}) {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-white text-black  xl:px-20">
+    <main className="flex min-h-screen flex-col items-center bg-white text-black  ">
         <FeaturedHero/>
         <MainPost/>
         <MainCategories/>

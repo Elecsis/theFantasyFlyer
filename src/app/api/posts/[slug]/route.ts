@@ -13,6 +13,6 @@ export const GET = async (req:any, {params}: any) => {
         return new NextResponse(JSON.stringify({post}, {status: 200}as any))
     } catch (err) {
         console.log(err)
-        return new NextResponse(JSON.stringify({message: 'Something went wrong'}, {status: 500}as any))
+        return new NextResponse(JSON.stringify({message: 'Something went wrong Lex'}, {status: 500}as any))
     }
 } 
