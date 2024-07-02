@@ -7,8 +7,8 @@ export default async function MyAccount() {
     const session = await getServerSession(authOptions);
     
    
-    if(session) {
-        return redirect('/')
+    if(!session) {
+        return redirect('/login')
     } else
 
     return (

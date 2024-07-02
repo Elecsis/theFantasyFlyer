@@ -12,6 +12,7 @@ export default function News({searchParams}: {searchParams: any}) {
     const cat = param.cat
 
 
+
    
 
     return (
