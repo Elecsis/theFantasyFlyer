@@ -48,7 +48,7 @@ export default async function CardList( page: any, cat: any  ) {
 
     return (
         <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0 lg:pr-10'>
-        { data.posts?.toReversed(data.posts).map((item:any)=> (
+        { data.posts?.map((item:any)=> (
         <div className=' flex flex-col md:flex-row rounded-lg  ' key={item._id}>
            {item.img && ( <Link  className='hidden md:block aspect-square md:h-72 relative bg-lime-500 shadow-lg rounded-l-lg' href={`/blog/${item.slug}`}>
                 <Image
