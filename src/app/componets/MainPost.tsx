@@ -14,7 +14,6 @@ const getData = async () => {
 
 export default async function MainPost() {
     const data = await getData();
-    console.log(data[0].title)
 
     return (
         <div className=' flex flex-col sm:flex-row pt-16 w-screen md:pr-10 px-10'>
