@@ -32,7 +32,8 @@ const Blog = async( {params}: any) => {
                                 alt='Football field and stadium at the 50 yard line'
                                 fill
                                 className='w-full h-full object-cover rounded-full'
-                                priority= {true }
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                priority
                             />
                         </div>
                         <div className="text-stone-600">

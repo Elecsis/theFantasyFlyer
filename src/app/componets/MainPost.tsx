@@ -24,6 +24,7 @@ export default async function MainPost() {
                 fill
                 className='w-full h-full object-cover '
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
                 />
             </div>
             <div className='flex flex-col justify-center py-10 sm:pt-5 md:pt-10 sm:w-1/2 sm:pl-10 '>

@@ -34,13 +34,13 @@ export default  async function EditorsPosts () {
         <div className='w-full  text-left flex flex-col md:pt-14 md: lg:w-full'>
             <h1 className='font-semibold text-2xl pb-6  md:pb-6 '>{'Editors Picks'}</h1>
             <div className='flex flex-col gap-4'>
-                { data.map((item:any) => (
-                    <div className='flex flex-col justify-between w-full ' key={item._id}>
-                        <div className={`${getCategoryColorClass(item.catSlug)} text-xs w-[30%] rounded-full  text-center :`}>{item.catSlug}</div>
-                        <Link href={`/blog/${item.slug}`} className="hover:underline hover:underline-offset-4 hover:decoration-lime-500    md:text-left  ">
-                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 '>{item.title} </h1>
+                { data.map((editorPost:any) => (
+                    <div className='flex flex-col justify-between w-full ' key={editorPost._id}>
+                        <div className={`${getCategoryColorClass(editorPost.catSlug)} text-xs w-[30%] rounded-full  text-center :`}>{editorPost.catSlug}</div>
+                        <Link href={`/blog/${editorPost.slug}`} className="hover:underline hover:underline-offset-4 hover:decoration-lime-500    md:text-left  ">
+                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 '>{editorPost.title} </h1>
                         </Link>
-                        <h3 className='text-stone-400 text-xs '>{item.createdAt.substring(0,10)}</h3>
+                        <h3 className='text-stone-400 text-xs '>{editorPost.createdAt.substring(0,10)}</h3>
                     </div>
                 ))}
             </div>

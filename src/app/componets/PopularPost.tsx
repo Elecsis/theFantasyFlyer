@@ -35,13 +35,13 @@ export default  async function PopularPosts () {
             <h3 className='text-xs text-stone-400'>What&apos;s hot</h3>
             <h1 className='font-semibold text-2xl pb-6  md:pb-6 '>Most Popular</h1>
             <div className='flex flex-col gap-4'>
-                { data.map((item:any) => (
-                    <div className='flex flex-col justify-between w-full ' key={item._id}>
-                        <div className={`${getCategoryColorClass(item.catSlug)} text-xs w-[30%] rounded-full  text-center :`}>{item.catSlug}</div>
-                        <Link href={`/blog/${item.slug}`} className="hover:underline hover:underline-offset-4 hover:decoration-lime-500     md:text-left  ">
-                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 hover:underline-offset-4'>{item.title} </h1>
+                { data.map((popPost:any) => (
+                    <div className='flex flex-col justify-between w-full ' key={popPost._id}>
+                        <div className={`${getCategoryColorClass(popPost.catSlug)} text-xs w-[30%] rounded-full  text-center :`}>{popPost.catSlug}</div>
+                        <Link href={`/blog/${popPost.slug}`} className="hover:underline hover:underline-offset-4 hover:decoration-lime-500     md:text-left  ">
+                        <h1 className='py-2 text-lg md:text-base hover:text-lime-500 hover:underline-offset-4'>{popPost.title} </h1>
                         </Link>
-                        <h3 className='text-stone-400 text-xs '>{item.createdAt.substring(0,10)}</h3>
+                        <h3 className='text-stone-400 text-xs '>{popPost.createdAt.substring(0,10)}</h3>
                     </div>
                 ))}
             </div>

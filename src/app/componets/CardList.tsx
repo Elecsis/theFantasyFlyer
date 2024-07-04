@@ -48,11 +48,11 @@ export default async function CardList( page: any, cat: any  ) {
 
     return (
         <div className='flex flex-col w-full gap-10 md:pl-10 lg:pl-0 lg:pr-10'>
-        { data.posts?.map((item:any)=> (
-        <div className=' flex flex-col md:flex-row rounded-lg  ' key={item._id}>
-           {item.img && ( <Link  className='hidden md:block aspect-square md:h-72 relative bg-lime-500 shadow-lg rounded-l-lg' href={`/blog/${item.slug}`}>
+        { data.posts?.map((post:any)=> (
+        <div className=' flex flex-col md:flex-row rounded-lg' key={post._id}>
+           {post.img && ( <Link  className='hidden md:block aspect-square md:h-72 relative bg-lime-500 shadow-lg rounded-l-lg' href={`/blog/${post.slug}`}>
                 <Image
-                src={item.img}
+                src={post.img}
                 alt='Football field and stadium at the 50 yard line'
                 fill
                 className='w-full h-full object-cover  rounded-l-lg'
@@ -61,13 +61,13 @@ export default async function CardList( page: any, cat: any  ) {
             </Link>)}
             <div className='flex flex-col justify-between w-full md:px-10  shadow-lg rounded-r-lg py-2'>
                 <div className="flex flex-row w-full justify-between p-3">
-                    <h3 className='text-black text-lg  self-center '>{item.createdAt.substring(0,10)}</h3>
-                    <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-sm text-center text-white ${getCategoryColorClass(item.catSlug)}`}>{item.catSlug}</div>
+                    <h3 className='text-black text-lg  self-center '>{post.createdAt.substring(0,10)}</h3>
+                    <div className={`w-[40%] lg:w-[30%] p-1 rounded-full self-center text-sm text-center text-white ${getCategoryColorClass(post.catSlug)}`}>{post.catSlug}</div>
                 </div>
                 
-                <h1 className='p-3  font-semibold'>{item.title}</h1>
-                <div className="p-3 md:text-xs lg:text-lg" dangerouslySetInnerHTML={{ __html:item.desc.substring(0,150)}} />
-                <Link href={`/blog/${item.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center  pb-2">Read More</Link>
+                <h1 className='p-3  font-semibold'>{post.title}</h1>
+                <div className="p-3 md:text-xs lg:text-lg" dangerouslySetInnerHTML={{ __html:post.desc.substring(0,150)}} />
+                <Link href={`/blog/${post.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center  pb-2">Read More</Link>
             </div>
         </div>
         ))}

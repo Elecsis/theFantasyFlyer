@@ -20,8 +20,8 @@ export default async function MainCategories() {
                 <h1 className='font-semibold text-2xl py-6 md:pt-14  md:pb-10 md:text-left '>Categories</h1>
             </div> 
             <div className='grid grid-cols-1 gap-4 w-full  sm:grid-cols-2 md:grid-cols-4  px-10 lg:px-0 lg:text-sm '>
-                {data?.map((item:any)=> (
-                    <Link href={`/news?cat=${item.title}`} key={`item._id`} className={`${item.color} md:w-full  p-2 rounded-md text-white text-center shadow-xl`}>{item.title}</Link>
+                {data?.map((mainCat:any)=> (
+                    <Link href={`/news?cat=${mainCat.title}`} key={mainCat._id} className={`${mainCat.color} md:w-full  p-2 rounded-md text-white text-center shadow-xl`}>{mainCat.title}</Link>
                 ))}
             </div>
         </div>

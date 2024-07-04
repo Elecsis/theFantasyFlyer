@@ -13,7 +13,6 @@ const kameron = Kameron({
 export const metadata: Metadata = {
   title: 'The Fantasy Flyer',
   description: 'We Fly High and Hunt Fantasy Football Championships!',
-  manifest: '/favicon.ico',
 }
 
 export default function RootLayout({
@@ -23,6 +22,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='bg-white'>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body className={kameron.className}>
         <AuthProvider>
           <Navbar/>

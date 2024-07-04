@@ -54,13 +54,13 @@ const Comments = ({postSlug}: any) => {
             <div className="flex flex-col gap-5">
                 {isLoading
                 ?"Loading" 
-                : data?.map((item: any) => (
-                    <div className="flex flex-col" key={item._id}>
+                : data?.map((comment: any) => (
+                    <div className="flex flex-col" key={comment._id}>
                         <div className="text-stone-600">
-                            <h2 className="">{item.user.name}</h2>
-                            <h3 className="text-xs">{item.createdAt.substring(0,16)}</h3>
+                            <h2 className="">{comment.user.name}</h2>
+                            <h3 className="text-xs">{comment.createdAt.substring(0,16)}</h3>
                         </div>
-                        <div className="text-left pt-2">{item.desc}</div>
+                        <div className="text-left pt-2">{comment.desc}</div>
                     </div>
                 ))}
             </div>
