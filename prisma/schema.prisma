@@ -124,3 +124,32 @@ model Comment {
   postSlug  String
   post      Post      @relation( fields: [postSlug], references: [slug])
 }
+
+
+model TeamBasic {
+  id                    String    @id @default(cuid()) @map("_id")
+  Key                   String
+  TeamID                Int
+  PlayerID              Int
+  City                  String
+  Name                  String
+  Conference            String?
+  Division              String?
+  FullName              String?
+  StadiumID             Int?
+  ByeWeek               Int?
+  GlobalTeamID          Int?
+  HeadCoach             String?
+  PrimaryColor          String?
+  SecondaryColor        String?
+  TritiaryColor         String?
+  QuaternaryColor       String?
+  WikipediaLogoURL      String?
+  WikipediaWordMarkURL  String?
+  OffensiveCoordinator  String?
+  DefensiveCoordinator  String?
+  SpecialTeamsCoach     String?
+  OffensiveScheme       String?
+  DefensiveScheme       String?
+}
+

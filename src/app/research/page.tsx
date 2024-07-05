@@ -1,12 +1,14 @@
 import React from "react";
-import ComingSoon from "../componets/CoomingSoon";
-import ReasearchHero from "../componets/ResearchHero";
+import ResearchHero from "../componets/ResearchHero";
+import ResearchTeams from "../componets/ResearchTeams";
+
 
 export default function Research() {
     return (
-        <main className=" h-screen">
-            <ReasearchHero/>
-            <ComingSoon/>
+        <main className="w-screen h-auto">
+            <ResearchHero/>
+            <div className="h-20 w-screen bg-white  text-black"> Teams</div>
+            <ResearchTeams/>
         </main>
     )
 }
