@@ -1,4 +1,4 @@
-import { authOptions } from "@/utils/auth";
+'use client'
 import { signOut } from "next-auth/react";
  
 export function SignOut() {
