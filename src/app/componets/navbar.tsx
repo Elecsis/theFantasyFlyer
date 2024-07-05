@@ -26,7 +26,7 @@ export default  function Navbar() {
                                 <Link href={"/"} className="hover:underline">Home</Link>
                                 <Link href={"/news"} className="hover:underline">News & Blog</Link>
                                 <Link href={"/rankings"} className="hover:underline">Rankings</Link>
-                                <Link href={"/research"} className="hover:underline">Research</Link>
+                                <Link href={"/research/teams"} className="hover:underline">Research</Link>
                                 <Link href={"/fantasy"} className="hover:underline">Fantasy Football:101</Link>
                                 <LogInMyAccount/>
                             </div>
@@ -36,7 +36,7 @@ export default  function Navbar() {
                 <div className="hidden md:flex  md:text-base lg:text-xl flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
                     <Link href={"/news"} className="hover:underline">News & Blog</Link>
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
-                    <Link href={"/research"} className="hover:underline">Research</Link>
+                    <Link href={"/research/teams"} className="hover:underline">Research</Link>
                     <Link href={"/fantasy"} className="hover:underline">Fantasy Football:101</Link>
                     <LogInOutButton/>
                 </div>

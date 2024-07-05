@@ -17,9 +17,15 @@ const nextConfig = {
             hostname: 'upload.wikimedia.org',
             pathname: '**',
           },
+          {
+            protocol: 'http',
+            hostname: 'cdn.usatsimg.com',
+            pathname: '**',
+          },
         ],
       },
 }
 
 
 module.exports = nextConfig
+

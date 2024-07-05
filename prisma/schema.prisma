@@ -153,3 +153,34 @@ model TeamBasic {
   DefensiveScheme       String?
 }
 
+model playerBasic{
+  id                                    String    @id @default(cuid()) @map("_id")
+  PlayerID                              Int
+  Team                                  String?
+  Number                                Int?
+  FirstName                             String?
+  LastName                              String?
+  Position                              String?
+  Status                                String?
+  Heigth                                String?
+  Weight                                Int?
+  BirthDate                             String?
+  College                               String?
+  Experience                            Int?
+  FantasyPosition                       String?
+  Active                                Boolean?
+  PositionCategory                      String?
+  Name                                  String?
+  Age                                   Int?
+  ShortName                             String?
+  HeightFeet                            Int?
+  HeightInches                          Int?
+  TeamID                                Int?
+  GlobalTeamID                          Int?
+  UsaTodayPlayerID                      Int?
+  UsaTodayHeadshotUrl                   String?
+  UsaTodayHeadshotNoBackgroundUrl       String?
+  UsaTodayHeadshotUpdated               String?
+  UsaTodayHeadshotNoBackgroundUpdated   String?
+}
+
