@@ -17,7 +17,7 @@ export default async function MyAccount() {
        
             <div className="flex h-52 w-72 rounded-lg bg-white text-center  items-center flex-col justify-evenly ">
                 <h1 className="pb-[8%] text-2xl">My Account</h1>
-                <div onClick={() => signOut({callbackUrl: `${window.location.origin}/login`}) } className="w-20 text-xs bg-lime-500 hover:bg-lime-500 p-2 text-center rounded text-white lg:text-lg">Log Out</div>
+                <div onClick={() => signOut({callbackUrl: `/login`}) } className="w-20 text-xs bg-lime-500 hover:bg-lime-500 p-2 text-center rounded text-white lg:text-lg">Log Out</div>
             </div> 
         </main>
     )
