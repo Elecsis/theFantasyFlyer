@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from 'next/image';
 
 const getData = async () => {
-    const res = await fetch(`https://www.thefantasyflyer.com/api/research/players`, {
+    const res = await fetch(`https://www.thefantasyflyer/api/research/players`, {
         cache: 'no-store',
     });
     if(!res.ok){
