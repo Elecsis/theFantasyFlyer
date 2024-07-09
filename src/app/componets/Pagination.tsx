@@ -17,6 +17,7 @@ const Pagination = ( page: any )=> {
                 className='bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white w-24 text-center disabled:bg-neutral-500'
                 disabled={!hasPrev}
                 >Previous</button>
+            {pageNum}   
             <button 
                 onClick={()=> router.push(`?page=${pageNum + 1}&cat=${cat|| ''}#posts`)} 
                 className='bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white w-24 text-center disabled:bg-neutral-500'
