@@ -185,7 +185,7 @@ model playerBasic{
 }
 
 model Team {
-  id                    String    @id @default(cuid()) @map("_id")
+  id                    String    @id @default(cuid()) @map("_id") 
   Key                   String
   TeamID                Int
   PlayerID              Int
@@ -205,7 +205,7 @@ model Team {
   OffensiveScheme       String?
   DefensiveScheme       String?
   UpcomingSalary        Int?
-  UpcomingOpponent      Int?
+  UpcomingOpponent      String?
   UpcomingOpponentRank  Int?
   UpcomingOpponentPositionRank  Int?
   UpcomingFanDuelSalary Int?
@@ -225,7 +225,7 @@ model Team {
   FantasyDraftName      String?
   FantasyDraftPlayerID  Int?
   YahooName             String?
-  YahooID               Int?
+  YahooPlayerID               Int?
   AverageDraftPosition2QB     String?
   AverageDraftPositionDynasty String?
   StadiumDetails        Stadium?
@@ -233,7 +233,7 @@ model Team {
 
 model Stadium {
   id              String    @id @default(cuid()) @map("_id")
-  StadiumID       Int
+  StadiumID       Int     
   Name            String
   City            String
   State           String?

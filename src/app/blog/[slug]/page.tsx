@@ -6,6 +6,7 @@ import SideCategories from "@/app/componets/SideCategories";
 import EditorsPosts from "@/app/componets/EditorsPosts";
 
 const getData = async (slug: any) => {
+    console.log(slug)
     const res = await fetch(`https://www.thefantasyflyer.com/api/posts/${slug}`, {
         cache: 'no-store',
     });
