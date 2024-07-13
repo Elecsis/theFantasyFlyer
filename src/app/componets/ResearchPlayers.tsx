@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from 'next/image';
 
@@ -22,7 +23,7 @@ const ResearchPlayers = async () => {
             {data?.map((player: any)=>(
                 <div className=' flex flex-row rounded-lg '  key={player.PlayerID}>
                     
-                    <div className='flex flex-row  w-full  shadow-lg rounded-lg text-black gap-3'>
+                    <div className='flex flex-row  w-full  drop-shadow-lg rounded-lg text-black gap-3'>
                         {/* {player.UsaTodayHeadshotUrl&& ( <Link  className='h-[100px] w-[100px] relative aspect-square bg-white shadow-lg rounded-l-lg ' href={`/`}>
                                 <Image
                                 src={player.UsaTodayHeadshotUrl}

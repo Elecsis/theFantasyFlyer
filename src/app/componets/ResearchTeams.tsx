@@ -15,15 +15,13 @@ const ResearchTeams = async () => {
    
     const data = await getData()
 
-   
-
     return (
-        <div className='flex flex-col w-full bg-white gap-5 px-8'>
+        <div className='grid grid-cols-2 md:grid-cols-4 w-full bg-white gap-5 px-8 pb-10'>
             {data?.map((team: any)=>(
-                <div className=' flex flex-row rounded-lg '  key={team.TeamID}>
+                <div className=' flex  rounded-lg '  key={team.Key}>
                     
-                    <div className='flex flex-row  w-full  shadow-lg rounded-lg text-black gap-3'>
-                        {team.WikipediaLogoURL && ( <Link  className='h-[100px] w-[100px] relative aspect-square bg-white shadow-lg rounded-l-lg ' href={`/`}>
+                    <div className='flex flex-col  w-full  shadow-lg rounded-lg text-black gap-3 items-center'>
+                        {team.WikipediaLogoURL && ( <Link  className='h-[100px] w-[100px] relative aspect-square bg-white  rounded-l-lg ' href={`/research/teams/${team.Key}`}>
                                 <Image
                                 src={team.WikipediaLogoURL}
                                 alt='Football field and stadium at the 50 yard line'
@@ -31,14 +29,14 @@ const ResearchTeams = async () => {
                                 className='w-full h-full  rounded-l-lg'
                                 />
                         </Link>)}
-                        <div className="flex flex-row w-full pr-3 ">
+                        <div className="flex flex-row w-full pr-3">
                             <div className="flex flex-col w-full ">
-                                <div className="flex flex-row gap-3 text-lg font-semibold ">
+                                <div className="flex flex-col lg:flex-row gap-3 text-lg items-center font-semibold w-full justify-center">
                                     <h1>{team.City}</h1>
                                     <h1>{team.Name}</h1>
-                                    <h1> Bye: {team.ByeWeek}</h1>
+                                    {/* <h1> Bye: {team.ByeWeek}</h1> */}
                                 </div>
-                                <div className="flex flex-row justify-between text-xs">
+                                {/* <div className="flex flex-row justify-between text-xs">
                                     <h1> Conf: {team.Conference}</h1>
                                     <h1> Division: {team.Division}</h1>
                                     
@@ -51,7 +49,7 @@ const ResearchTeams = async () => {
                                 <div className="flex flex-row justify-between text-xs">
                                     <h1> Offensive Scheme: {team.OffensiveScheme}</h1>
                                     <h1> Defensive Scheme: {team.DefensiveScheme}</h1>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

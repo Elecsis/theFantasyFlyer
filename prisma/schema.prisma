@@ -184,3 +184,65 @@ model playerBasic{
   UsaTodayHeadshotNoBackgroundUpdated   String?
 }
 
+model Team {
+  id                    String    @id @default(cuid()) @map("_id")
+  Key                   String
+  TeamID                Int
+  PlayerID              Int
+  City                  String
+  Name                  String
+  Conference            String?
+  Division              String?
+  FullName              String?
+  StadiumID             Int?
+  ByeWeek               Int?
+  AverageDraftPosition  String?
+  AverageDraftPositionPPR String?
+  HeadCoach             String?
+  OffensiveCoordinator  String?
+  DefensiveCoordinator  String?
+  SpecialTeamsCoach     String?
+  OffensiveScheme       String?
+  DefensiveScheme       String?
+  UpcomingSalary        Int?
+  UpcomingOpponent      Int?
+  UpcomingOpponentRank  Int?
+  UpcomingOpponentPositionRank  Int?
+  UpcomingFanDuelSalary Int?
+  UpcomingDraftKingsSalary  Int?
+  UpcomingYahooSalary   Int?
+  PrimaryColor          String?
+  SecondaryColor        String?
+  TritiaryColor         String?
+  QuaternaryColor       String?
+  WikipediaLogoURL      String?
+  WikipediaWordMarkURL  String?
+  GlobalTeamID          Int?
+  DraftKingsName        String?
+  DraftKingsPlayerID    Int?
+  FanDuelName           String?
+  FanDuelPlayerID       Int?
+  FantasyDraftName      String?
+  FantasyDraftPlayerID  Int?
+  YahooName             String?
+  YahooID               Int?
+  AverageDraftPosition2QB     String?
+  AverageDraftPositionDynasty String?
+  StadiumDetails        Stadium?
+}
+
+model Stadium {
+  id              String    @id @default(cuid()) @map("_id")
+  StadiumID       Int
+  Name            String
+  City            String
+  State           String?
+  Country         String
+  Capacity        Int?
+  PlayingSurface  String?
+  GeoLat          String?
+  GeoLong         String?
+  Type            String?
+  team            Team @relation(fields: [teamID], references: [id])
+  teamID          String @unique 
+}

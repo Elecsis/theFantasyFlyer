@@ -30,7 +30,7 @@ export default async function MainPost() {
             <div className='flex flex-col justify-center py-10 sm:pt-5 md:pt-10 sm:w-1/2 sm:pl-10 '>
                 <h1 className='text-lg md:text-2xl font-semibold'>{data[0].title} </h1>
                 
-                <div className="sm:text-sm  md:text-base py-8 sm:py-4 md:py-8" dangerouslySetInnerHTML={{ __html:data[0].desc.substring(0,250)}} />
+                <div className="sm:text-sm  md:text-base py-8 sm:py-4 md:py-8" dangerouslySetInnerHTML={{ __html:data[0].desc.substring(0,250)+ '........'}} />
                 <Link href={`/blog/${data[0].slug}`} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white w-24 text-center">Read More</Link>
             </div>
         </div>
