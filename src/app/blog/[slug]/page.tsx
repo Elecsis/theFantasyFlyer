@@ -1,9 +1,8 @@
 import React from "react";
 import Image from 'next/image'
 import Comments from "@/app/componets/Comments";
-import PopularPosts from "@/app/componets/PopularPost";
-import SideCategories from "@/app/componets/SideCategories";
-import EditorsPosts from "@/app/componets/EditorsPosts";
+import { SideCol } from "@/app/componets/SideCol";
+
 
 const getData = async (slug: any) => {
     console.log(slug)
@@ -20,11 +19,11 @@ const Blog = async( {params}: any) => {
     const {slug} = params
     const data = await getData(slug)
     return (
-        <main className="bg-white text-black">
 
+        <main className="bg-white text-black">
             <div className=' flex flex-col sm:flex-row lg:pt-16 w-screen px-10'>
                 <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
-                    <h1 className=' text-5xl font-semibold'>{data.post.title} </h1>
+                    <h1 className=' text-4xl font-semibold'>{data.post.title} </h1>
                     
                     <div className="flex flex-row gap-3 ">
                         <div className="w-10 h-10 rounded-lg relative">
@@ -48,36 +47,23 @@ const Blog = async( {params}: any) => {
                         src={data.post.img}
                         alt='Football field and stadium at the 50 yard line'
                         fill
-                        className='w-full h-full object-cover rounded-lg'
+                        className='w-full h-full object-fill rounded-lg'
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority= {true }
                     />
                 </div>)}
             </div>
-
             <div className='flex flex-col w-full lg:flex-row px-10'>
                 <div className='lg:w-4/5 flex flex-col'>
-                   
                     <div className='flex flex-col w-full lg:pr-20 pt-16'>
                         <div
                             dangerouslySetInnerHTML={{__html: data?.post.desc}}
                         /> 
-                        
                         <Comments postSlug={data.post.slug}/>
                     </div>
                 </div>
-                <div className='pt-10 md:pt-0 md:w-full lg:w-1/5 flex flex-col md:flex-row lg:flex-col md:px-10 lg:px-0'>
-                    <PopularPosts/>
-                    <SideCategories/>
-                    <EditorsPosts/>
-              
-
-                    
-                </div>
-                
+                <SideCol/>
             </div>
-
-
         </main>
     )
 }

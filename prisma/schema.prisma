@@ -8,15 +8,15 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
- 
+
 generator client {
   provider = "prisma-client-js"
 }
- 
+
 model User {
   id            String          @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
-  email         String        @unique
+  email         String          @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
@@ -25,11 +25,11 @@ model User {
   Comment       Comment[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 model Account {
   id                String  @id @default(auto()) @map("_id") @db.ObjectId
   userId            String  @db.ObjectId
@@ -43,35 +43,35 @@ model Account {
   scope             String?
   id_token          String? @db.String
   session_state     String?
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   @@unique([provider, providerAccountId])
 }
- 
+
 model Session {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
   sessionToken String   @unique
   userId       String   @db.ObjectId
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 model VerificationToken {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   identifier String
   token      String
   expires    DateTime
- 
+
   @@unique([identifier, token])
 }
- 
+
 // Optional for WebAuthn support
 model Authenticator {
   credentialID         String  @id @map("_id")
@@ -82,9 +82,9 @@ model Authenticator {
   credentialDeviceType String
   credentialBackedUp   Boolean
   transports           String?
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   @@unique([userId, credentialID])
 }
 
@@ -108,7 +108,7 @@ model Post {
   catSlug   String
   cat       Category  @relation(fields: [catSlug], references: [slug])
   userEmail String
-  user      User      @relation( fields: [userEmail], references: [email])
+  user      User      @relation(fields: [userEmail], references: [email])
   comment   Comment[]
   popular   Boolean   @default(false)
   editor    Boolean   @default(false)
@@ -116,133 +116,132 @@ model Post {
 }
 
 model Comment {
-  id        String    @id @default(cuid()) @map("_id")
-  createdAt DateTime  @default(now())
+  id        String   @id @default(cuid()) @map("_id")
+  createdAt DateTime @default(now())
   desc      String
   userEmail String
-  user      User      @relation( fields: [userEmail], references: [email])
+  user      User     @relation(fields: [userEmail], references: [email])
   postSlug  String
-  post      Post      @relation( fields: [postSlug], references: [slug])
+  post      Post     @relation(fields: [postSlug], references: [slug])
 }
-
 
 model TeamBasic {
-  id                    String    @id @default(cuid()) @map("_id")
-  Key                   String
-  TeamID                Int
-  PlayerID              Int
-  City                  String
-  Name                  String
-  Conference            String?
-  Division              String?
-  FullName              String?
-  StadiumID             Int?
-  ByeWeek               Int?
-  GlobalTeamID          Int?
-  HeadCoach             String?
-  PrimaryColor          String?
-  SecondaryColor        String?
-  TritiaryColor         String?
-  QuaternaryColor       String?
-  WikipediaLogoURL      String?
-  WikipediaWordMarkURL  String?
-  OffensiveCoordinator  String?
-  DefensiveCoordinator  String?
-  SpecialTeamsCoach     String?
-  OffensiveScheme       String?
-  DefensiveScheme       String?
+  id                   String  @id @default(cuid()) @map("_id")
+  Key                  String
+  TeamID               Int
+  PlayerID             Int
+  City                 String
+  Name                 String
+  Conference           String?
+  Division             String?
+  FullName             String?
+  StadiumID            Int?
+  ByeWeek              Int?
+  GlobalTeamID         Int?
+  HeadCoach            String?
+  PrimaryColor         String?
+  SecondaryColor       String?
+  TritiaryColor        String?
+  QuaternaryColor      String?
+  WikipediaLogoURL     String?
+  WikipediaWordMarkURL String?
+  OffensiveCoordinator String?
+  DefensiveCoordinator String?
+  SpecialTeamsCoach    String?
+  OffensiveScheme      String?
+  DefensiveScheme      String?
 }
 
-model playerBasic{
-  id                                    String    @id @default(cuid()) @map("_id")
-  PlayerID                              Int
-  Team                                  String?
-  Number                                Int?
-  FirstName                             String?
-  LastName                              String?
-  Position                              String?
-  Status                                String?
-  Heigth                                String?
-  Weight                                Int?
-  BirthDate                             String?
-  College                               String?
-  Experience                            Int?
-  FantasyPosition                       String?
-  Active                                Boolean?
-  PositionCategory                      String?
-  Name                                  String?
-  Age                                   Int?
-  ShortName                             String?
-  HeightFeet                            Int?
-  HeightInches                          Int?
-  TeamID                                Int?
-  GlobalTeamID                          Int?
-  UsaTodayPlayerID                      Int?
-  UsaTodayHeadshotUrl                   String?
-  UsaTodayHeadshotNoBackgroundUrl       String?
-  UsaTodayHeadshotUpdated               String?
-  UsaTodayHeadshotNoBackgroundUpdated   String?
+model playerBasic {
+  id                                  String   @id @default(cuid()) @map("_id")
+  PlayerID                            Int
+  Team                                String?
+  Number                              Int?
+  FirstName                           String?
+  LastName                            String?
+  Position                            String?
+  Status                              String?
+  Heigth                              String?
+  Weight                              Int?
+  BirthDate                           String?
+  College                             String?
+  Experience                          Int?
+  FantasyPosition                     String?
+  Active                              Boolean?
+  PositionCategory                    String?
+  Name                                String?
+  Age                                 Int?
+  ShortName                           String?
+  HeightFeet                          Int?
+  HeightInches                        Int?
+  TeamID                              Int?
+  GlobalTeamID                        Int?
+  UsaTodayPlayerID                    Int?
+  UsaTodayHeadshotUrl                 String?
+  UsaTodayHeadshotNoBackgroundUrl     String?
+  UsaTodayHeadshotUpdated             String?
+  UsaTodayHeadshotNoBackgroundUpdated String?
 }
 
 model Team {
-  id                    String    @id @default(cuid()) @map("_id") 
-  Key                   String
-  TeamID                Int
-  PlayerID              Int
-  City                  String
-  Name                  String
-  Conference            String?
-  Division              String?
-  FullName              String?
-  StadiumID             Int?
-  ByeWeek               Int?
-  AverageDraftPosition  String?
-  AverageDraftPositionPPR String?
-  HeadCoach             String?
-  OffensiveCoordinator  String?
-  DefensiveCoordinator  String?
-  SpecialTeamsCoach     String?
-  OffensiveScheme       String?
-  DefensiveScheme       String?
-  UpcomingSalary        Int?
-  UpcomingOpponent      String?
-  UpcomingOpponentRank  Int?
-  UpcomingOpponentPositionRank  Int?
-  UpcomingFanDuelSalary Int?
-  UpcomingDraftKingsSalary  Int?
-  UpcomingYahooSalary   Int?
-  PrimaryColor          String?
-  SecondaryColor        String?
-  TritiaryColor         String?
-  QuaternaryColor       String?
-  WikipediaLogoURL      String?
-  WikipediaWordMarkURL  String?
-  GlobalTeamID          Int?
-  DraftKingsName        String?
-  DraftKingsPlayerID    Int?
-  FanDuelName           String?
-  FanDuelPlayerID       Int?
-  FantasyDraftName      String?
-  FantasyDraftPlayerID  Int?
-  YahooName             String?
-  YahooPlayerID               Int?
-  AverageDraftPosition2QB     String?
-  AverageDraftPositionDynasty String?
-  StadiumDetails        Stadium?
+  id                           String   @id @default(cuid()) @map("_id") @db.ObjectId
+  Key                          String   
+  TeamID                       Int     
+  PlayerID                     Int
+  City                         String
+  Name                         String
+  Conference                   String?
+  Division                     String?
+  FullName                     String?
+  StadiumID                    Int?     
+  ByeWeek                      Int?
+  AverageDraftPosition         Float?
+  AverageDraftPositionPPR      Float?
+  HeadCoach                    String?
+  OffensiveCoordinator         String?
+  DefensiveCoordinator         String?
+  SpecialTeamsCoach            String?
+  OffensiveScheme              String?
+  DefensiveScheme              String?
+  UpcomingSalary               Int?
+  UpcomingOpponent             String?
+  UpcomingOpponentRank         Int?
+  UpcomingOpponentPositionRank Int?
+  UpcomingFanDuelSalary        Int?
+  UpcomingDraftKingsSalary     Int?
+  UpcomingYahooSalary          Int?
+  PrimaryColor                 String?
+  SecondaryColor               String?
+  TertiaryColor                String?
+  QuaternaryColor              String?
+  WikipediaLogoURL     String?
+  WikipediaWordMarkURL String?
+  GlobalTeamID                 Int?
+  DraftKingsName               String?
+  DraftKingsPlayerID           Int?
+  FanDuelName                  String?
+  FanDuelPlayerID              Int?
+  FantasyDraftName             String?
+  FantasyDraftPlayerID         Int?
+  YahooName                    String?
+  YahooPlayerID                Int?
+  AverageDraftPosition2QB      Float?
+  AverageDraftPositionDynasty  Float?
+  StadiumDetails               Stadium?
 }
 
 model Stadium {
-  id              String    @id @default(cuid()) @map("_id")
-  StadiumID       Int     
-  Name            String
-  City            String
-  State           String?
-  Country         String
-  Capacity        Int?
-  PlayingSurface  String?
-  GeoLat          String?
-  GeoLong         String?
-  Type            String?
-  team            Team @relation(fields: [teamID], references: [id])
-  teamID          String @unique 
+  id             String  @id @default(cuid()) @map("_id") 
+  StadiumID      Int
+  Name           String
+  City           String
+  State          String?
+  Country        String
+  Capacity       Int?
+  PlayingSurface String?
+  GeoLat         Float?
+  GeoLong        Float?
+  Type           String?
+  team           Team?    @relation(fields: [teamID], references: [id])
+  teamID         String?   @unique @db.ObjectId
 }
