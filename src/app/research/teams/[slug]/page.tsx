@@ -4,7 +4,7 @@ import { SideCol } from "@/app/componets/SideCol";
 
 const getTeamData = async ( {slug}: any) => {
     console.log('getdata:.....', slug)
-    const team = `http://localhost:3000/api/research/teams/${slug}` 
+    const team = `https://wwww.fantasyflyer.com/api/research/teams/${slug}` 
     console.log(team)
     const res = await fetch(team, {
         cache: 'no-store',
@@ -22,6 +22,7 @@ const Team = async( {params}: any) => {
     const slug = params 
    
     const data = await getTeamData(slug)
+    console.log(data)
     
     return (
         <main className="bg-white text-black">
@@ -30,14 +31,7 @@ const Team = async( {params}: any) => {
                 <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
                     <h1 className=' text-xl font-semibold'>{data.City} </h1>
                     <h1 className=' text-3xl font-semibold'>{data.Name} </h1>
-                    <h1 className=' lg:text-xl '>Conference:   {data.Conference} </h1>
-                    <h1 className=' lg:text-xl '>Division:  {data.Division} </h1>
-                    <h1 className=' lg:text-xl '>Head Coach:  {data.HeadCoach} </h1>
-                    <h1 className=' lg:text-xl '>Offensive Coordinator:  {data.OffensiveCoordinator} </h1>
-                    <h1 className=' lg:text-xl '>Defensive Coordinator: {data.DefensiveCoordinator} </h1>
-                    <h1 className=' lg:text-xl '>Special Teams Coordinator:  {data.SpecialTeamsCoach} </h1>
-                    <h1 className=' lg:text-xl '>Offensive Scheme:  {  data.OffensiveScheme} </h1>
-                    <h1 className=' lg:text-xl '>Defensive Scheme:  {  data.DefensiveScheme} </h1>
+
                     <div className="flex flex-row gap-3 ">
                         
                         <div className="text-stone-600">
@@ -61,7 +55,19 @@ const Team = async( {params}: any) => {
             <div className='flex flex-col w-full lg:flex-row px-10'>
                 <div className='lg:w-4/5 flex flex-col'>
                    <div>
-                    <h1>{data.AverageDraftPositionPPR}</h1>
+                   <h1 className=' lg:text-xl '>Conference:   {data.Conference} </h1>
+                    <h1 className=' lg:text-xl '>Division:  {data.Division} </h1>
+                    <h1 className=' lg:text-xl '>Head Coach:  {data.HeadCoach} </h1>
+                    <h1 className=' lg:text-xl '>Offensive Coordinator:  {data.OffensiveCoordinator} </h1>
+                    <h1 className=' lg:text-xl '>Defensive Coordinator: {data.DefensiveCoordinator} </h1>
+                    <h1 className=' lg:text-xl '>Special Teams Coordinator:  {data.SpecialTeamsCoach} </h1>
+                    <h1 className=' lg:text-xl '>Offensive Scheme:  {  data.OffensiveScheme} </h1>
+                    <h1 className=' lg:text-xl '>Defensive Scheme:  {  data.DefensiveScheme} </h1>
+                    <h1 className=' lg:text-xl '>Average Draft Position:  { data.AverageDraftPosition} </h1>
+                    <h1 className=' lg:text-xl '>Average Draft Position PPR:  { data.AverageDraftPositionPPR} </h1>
+                    <h1 className=' lg:text-xl '>Average Draft Position 2QB:  { data.AverageDraftPosition2QB} </h1>
+                    <h1 className=' lg:text-xl '>Average Draft Position Dynasty:  { data.AverageDraftPositionDynasty} </h1>
+                    <h1 className=' lg:text-xl '>Bye Week:  { data.ByeWeek} </h1>
                    </div>
                 </div>
                 <SideCol/>
