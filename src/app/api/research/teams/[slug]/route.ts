@@ -4,12 +4,17 @@ import { NextResponse } from "next/server"
 export const GET = async ( req:any, {params}: any) => {
     
     const {slug} = params;
-    console.log(slug)
     try {
         const team = await prisma.team.findFirst({
             where:{Key: slug}
+                
+            
         })
-        
+        const teamBasic = await prisma.teamBasic.findFirst({
+            where:{Key: slug}
+                
+            
+        })
         return new NextResponse(JSON.stringify(team, {status: 200} as any))
     } catch (err) {
         console.log(err)

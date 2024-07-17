@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { SideCol } from "@/app/componets/SideCol";
 
 const getTeamData = async ( {slug}: any) => {
-    const team = `https://wwww.thefantasyflyer.com/api/research/teams/${slug}` 
+    const team = `https://www.thefantasyflyer.com/api/research/teams/${slug}` 
     const res = await fetch(team, {
         cache: 'no-store',
     });
@@ -20,7 +20,6 @@ const Team = async( {params}: any) => {
     const slug = params 
    
     const data = await getTeamData(slug)
-    console.log(data)
     
     return (
         <main className="bg-white text-black">
