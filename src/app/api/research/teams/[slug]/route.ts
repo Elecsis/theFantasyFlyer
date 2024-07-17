@@ -10,11 +10,6 @@ export const GET = async ( req:any, {params}: any) => {
                 
             
         })
-        const teamBasic = await prisma.teamBasic.findFirst({
-            where:{Key: slug}
-                
-            
-        })
         return new NextResponse(JSON.stringify(team, {status: 200} as any))
     } catch (err) {
         console.log(err)

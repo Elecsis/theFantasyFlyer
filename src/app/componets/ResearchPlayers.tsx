@@ -32,26 +32,19 @@ const ResearchPlayers = async () => {
                                 className='w-full h-full  rounded-l-lg'
                                 />
                         </Link>)} */}
-                        <div className="flex flex-row w-full pr-3 ">
+                        <div className="flex flex-row w-full pr-3  ">
                             <div className="flex flex-col w-full ">
                                 <div className="flex flex-row gap-3 text-lg font-semibold ">
                                     <h1>{player.Name}</h1>
                                     <h1>{player.Team}</h1>
                                 </div>
                                 <div className="flex flex-row justify-between text-xs">
-                                    <h1> H: {player.HeightFeet}</h1>
-                                    <h1> Division: {player.HeightInches}</h1>
+                                    <h1> Height: {player.HeightFeet} {player.HeightInches}</h1>
+                                    <h1> Division: </h1>
                                     
-                                    <h1> Coach: </h1>
+                                   
                                 </div>
-                                <div className="flex flex-row justify-between text-xs">
-                                    <h1> OC: </h1>
-                                    <h1> DC: </h1>
-                                </div>
-                                <div className="flex flex-row justify-between text-xs">
-                                    <h1> Offensive Scheme: </h1>
-                                    <h1> Defensive Scheme: </h1>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
