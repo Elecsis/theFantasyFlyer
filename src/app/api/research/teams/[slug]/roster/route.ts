@@ -29,8 +29,7 @@ export const GET = async (req: any, params: any) => {
                         },
                       },
                     ],
-                }
-                ,take:40}),
+                }}),
                 
             prisma.teamBasic.findFirst({
                 where:{Key: team}
