@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 
 const Pagination = ( page: any )=> {
 
-    console.log(page)
     const hasNext = page.page.next.hasNext
     const hasPrev = page.page.prev.hasPrev
     const pageNum = page.page.page.pageNum

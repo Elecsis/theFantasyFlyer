@@ -8,11 +8,9 @@ export const GET = async ( req:any, {params}: any) => {
     try {
         const team = await prisma.team.findFirst({
             where:{Key: slug}
-                
-            
         })
         
-        return new NextResponse(JSON.stringify(team ,{status: 200} as any))
+        return new NextResponse(JSON.stringify(team, {status: 200} as any))
     } catch (err) {
         console.log(err)
         return new NextResponse(JSON.stringify({message: 'Something went wrong'}, {status: 500}as any))

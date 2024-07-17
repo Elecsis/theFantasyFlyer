@@ -5,7 +5,6 @@ import { SideCol } from "@/app/componets/SideCol";
 
 
 const getData = async (slug: any) => {
-    console.log(slug)
     const res = await fetch(`https://www.thefantasyflyer.com/api/posts/${slug}`, {
         cache: 'no-store',
     });
