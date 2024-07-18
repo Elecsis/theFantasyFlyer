@@ -38,6 +38,7 @@ export default function Footer() {
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Footbal:101</Link>
+                            <Link href="/login" className="hover:underline">Login</Link>
                         </div>
                     }
                     <div className="flex flex-row  border-b justify-between  pt-8 items-center pb-1" onClick={() => { setIsSocialExpanded(!isSocialExpanded)}}>
@@ -51,10 +52,9 @@ export default function Footer() {
                     </div>
                     {isSocialExpanded &&
                         <div className="flex flex-col antialiased bg-white">
-                            <Link href={'https://www.instagram.com/thefantasyflyer/'} className="pb-2 pt-4 hover:underline">INSTAGRAM</Link>
-                            <Link href={'https://www.facebook.com/fltaxstop/'} className="py-2 hover:underline">FACEBOOK</Link>
-                            <Link href={'https://x.com/thefantasyflyer'} className="py-2 hover:underline">TWITTER</Link>
                             <Link href={'https://www.youtube.com/channel/UCKRn6jHOQ-ibRDoeUZsH3EA'} className="py-2 hover:underline">YOUTUBE</Link>
+                            <Link href={'https://www.instagram.com/thefantasyflyer/'} className="pb-2 pt-4 hover:underline">INSTAGRAM</Link>
+                            <Link href={'https://x.com/thefantasyflyer'} className="py-2 hover:underline">TWITTER</Link>
                         </div>
                     }
                 </div>
@@ -84,12 +84,12 @@ export default function Footer() {
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Football:101</Link>
+                            <Link href="/login" className="hover:underline">Login</Link>
                         </div>
                         <div className='flex flex-col font-light gap-2 '>
-                            <Link href={'https://www.instagram.com/thefantasyflyer/'} className="hover:underline">INSTAGRAM</Link> 
-                            <Link href={'https://www.facebook.com/fltaxstop/'} className="hover:underline">FACEBOOK</Link> 
-                            <Link href={'https://x.com/thefantasyflyer'} className="hover:underline">TWITTER</Link> 
                             <Link href={'https://www.youtube.com/channel/UCKRn6jHOQ-ibRDoeUZsH3EA'} className="hover:underline">YOUTUBE</Link> 
+                            <Link href={'https://www.instagram.com/thefantasyflyer/'} className="hover:underline">INSTAGRAM</Link>  
+                            <Link href={'https://x.com/thefantasyflyer'} className="hover:underline">TWITTER</Link> 
                         </div>
                     </div>
                     

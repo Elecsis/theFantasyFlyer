@@ -5,9 +5,24 @@ export const GET = async () => {
 
     try {
         const playerBasic = await prisma.playerBasic.findMany({
+            orderBy:  {PlayerID: "asc"},
+            take:40,
             where:{ 
                 Active: true,
-                PositionCategory: 'OFF',
+                
+                OR: [
+                  {
+                    PositionCategory: {
+                      equals: 'OFF',
+                    },
+                  },
+                  { Position:  { 
+                    equals: 'K' 
+                    },
+                  },
+                ],
+
+                
                 NOT: [{
                     Position: {
                       endsWith: 'OT', 
@@ -24,8 +39,9 @@ export const GET = async () => {
                     },
                   },
                 ],
-            } ,
-                take:40}
+               
+            }
+          }
         )
         return new NextResponse(JSON.stringify(playerBasic, {status: 200} as any))
     } catch (err) {

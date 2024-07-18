@@ -185,15 +185,15 @@ model playerBasic {
 
 model Team {
   id                           String   @id @default(cuid()) @map("_id") @db.ObjectId
-  Key                          String   
-  TeamID                       Int     
+  Key                          String
+  TeamID                       Int
   PlayerID                     Int
   City                         String
   Name                         String
   Conference                   String?
   Division                     String?
   FullName                     String?
-  StadiumID                    Int?     
+  StadiumID                    Int?
   ByeWeek                      Int?
   AverageDraftPosition         Float?
   AverageDraftPositionPPR      Float?
@@ -214,8 +214,8 @@ model Team {
   SecondaryColor               String?
   TertiaryColor                String?
   QuaternaryColor              String?
-  WikipediaLogoURL     String?
-  WikipediaWordMarkURL String?
+  WikipediaLogoURL             String?
+  WikipediaWordMarkURL         String?
   GlobalTeamID                 Int?
   DraftKingsName               String?
   DraftKingsPlayerID           Int?
@@ -231,7 +231,7 @@ model Team {
 }
 
 model Stadium {
-  id             String  @id @default(cuid()) @map("_id") 
+  id             String  @id @default(cuid()) @map("_id")
   StadiumID      Int
   Name           String
   City           String
@@ -242,6 +242,66 @@ model Stadium {
   GeoLat         Float?
   GeoLong        Float?
   Type           String?
-  team           Team?    @relation(fields: [teamID], references: [id])
-  teamID         String?   @unique @db.ObjectId
+  team           Team?   @relation(fields: [teamID], references: [id])
+  teamID         String? @unique @db.ObjectId
+}
+
+model playerPPRADP {
+  id            String  @id @default(cuid()) @map("_id")
+  player_id     Int
+  name          String
+  position      String?
+  team          String?
+  adp           Float?
+  adp_formatted String?
+  times_drafted Int?
+  high          Int?
+  low           Int?
+  stdev         Float?
+  bye           Int?
+}
+
+model playerNonPPRADP {
+  id            String  @id @default(cuid()) @map("_id")
+  player_id     Int
+  name          String
+  position      String?
+  team          String?
+  adp           Float?
+  adp_formatted String?
+  times_drafted Int?
+  high          Int?
+  low           Int?
+  stdev         Float?
+  bye           Int?
+}
+
+model player2QbADP {
+  id            String  @id @default(cuid()) @map("_id")
+  player_id     Int
+  name          String
+  position      String?
+  team          String?
+  adp           Float?
+  adp_formatted String?
+  times_drafted Int?
+  high          Int?
+  low           Int?
+  stdev         Float?
+  bye           Int?
+}
+
+model playerDynastyADP {
+  id            String  @id @default(cuid()) @map("_id")
+  player_id     Int
+  name          String
+  position      String?
+  team          String?
+  adp           Float?
+  adp_formatted String?
+  times_drafted Int?
+  high          Int?
+  low           Int?
+  stdev         Float?
+  bye           Int?
 }

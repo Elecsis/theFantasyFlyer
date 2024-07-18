@@ -12,7 +12,17 @@ export const GET = async (req: any, params: any) => {
                 where:{ 
                     Team: team ,
                     Active: true,
-                    PositionCategory: 'OFF',
+                    OR: [
+                      {
+                        PositionCategory: {
+                          equals: 'OFF',
+                        },
+                      },
+                      { Position:  { 
+                        equals: 'K' 
+                        },
+                      },
+                    ],
                     NOT: [{
                         Position: {
                           endsWith: 'OT', 

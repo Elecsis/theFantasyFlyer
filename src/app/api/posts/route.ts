@@ -20,8 +20,6 @@ export const GET = async (req:any) => {
                 where: {
                     ...(cat && { catSlug: cat} )
                 },
-                
-                
             }),
             prisma.post.count({where: {
                 ...(cat && { catSlug: cat} )

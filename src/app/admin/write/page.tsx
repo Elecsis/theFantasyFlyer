@@ -1,15 +1,15 @@
 "use client"
 
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import ImageIconOne from "../../../public/svgs/image1";
-import ImageIconTwo from "../../../public/svgs/image2";
-import VideoIcon from "../../../public/svgs/video";
 import React, { useEffect, useMemo, useState } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import dynamic from "next/dynamic";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { app } from "@/utils/firebase";
+import ImageIconOne from "../../../../public/svgs/image1";
+import ImageIconTwo from "../../../../public/svgs/image2";
+import VideoIcon from "../../../../public/svgs/video";
 
 
 const storage = getStorage(app);
