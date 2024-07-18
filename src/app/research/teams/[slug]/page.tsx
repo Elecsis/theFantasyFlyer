@@ -23,6 +23,7 @@ const Team = async( {params}: any) => {
    
     const data = await getTeamData(slug)
     
+    
     return (
         <main className="bg-white text-black" id='topteam'>
 
@@ -54,11 +55,11 @@ const Team = async( {params}: any) => {
             <div className='flex flex-col w-full lg:flex-row px-10 '>
                
                 <div className=' lg:w-4/5 flex flex-col md:pt-10 lg:pt-20 lg:pr-10 '>
-                    <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-between md:px-5 text-white">
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 underline">Basic Team Info</h1>
-                        <Link href={`/research/teams/${data.Key}/roster`} className="bg-lime-500 rounded-full p-1 lg:p-3 ">Roster</Link>
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 ">Schedule</h1>
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 ">Notes</h1> 
+                    <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-between md:px-5 text-white pt-5">
+                        <h1 className=" border border-lime-500 text-lime-500 rounded-full p-2 lg:p-3  ">Basic Info</h1>
+                        <Link href={`/research/teams/${data.Key}/roster`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Roster</Link>
+                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Schedule</h1>
+                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Notes</h1> 
                     </div>
                     <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 ">
                         <div className="flex flex-row justify-between border-b-2 px-2  ">
@@ -115,8 +116,8 @@ const Team = async( {params}: any) => {
                         </div>
                     </div>
                     <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-evenly py- md:px-5 text-white pt-8">
-                        <Link href={"/research/teams"} className="bg-lime-500 rounded-full p-1 lg:p-3 hover:underline">Back to Teams </Link>
-                        <Link href={'#topteam'} className="bg-lime-500 rounded-full p-1 lg:p-3 hover:underline">Back to Top </Link>
+                        <Link href={"/research/teams"} className="bg-lime-500 rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Back to Teams </Link>
+                        <Link href={'#topteam'} className="bg-lime-500 rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Back to Top </Link>
                     </div>
                 </div>
                 <SideCol/>

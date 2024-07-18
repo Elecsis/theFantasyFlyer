@@ -29,27 +29,13 @@ const ResearchTeams = async () => {
                                 className='w-full h-full  rounded-l-lg'
                                 />
                         </Link>)}
-                        <div className="flex flex-row w-full pr-3">
+                        <div className="flex flex-row w-full ">
                             <div className="flex flex-col w-full ">
-                                <div className="flex flex-col lg:flex-row gap-3 text-lg items-center font-semibold w-full justify-center">
-                                    <h1>{team.City}</h1>
-                                    <h1>{team.Name}</h1>
+                                <div className="flex flex-col lg:flex-row gap-2 text-xl lg:text-lg items-center font-semibold w-full justify-center py-2">
+                                    <Link href={`/research/teams/${team.Key}`}>{team.City}</Link>
+                                    <Link  href={`/research/teams/${team.Key}`}>{team.Name}</Link>
                                     {/* <h1> Bye: {team.ByeWeek}</h1> */}
                                 </div>
-                                {/* <div className="flex flex-row justify-between text-xs">
-                                    <h1> Conf: {team.Conference}</h1>
-                                    <h1> Division: {team.Division}</h1>
-                                    
-                                    <h1> Coach: {team.HeadCoach}</h1>
-                                </div>
-                                <div className="flex flex-row justify-between text-xs">
-                                    <h1> OC: {team.OffensiveCoordinator}</h1>
-                                    <h1> DC: {team.DefensiveCoordinator}</h1>
-                                </div>
-                                <div className="flex flex-row justify-between text-xs">
-                                    <h1> Offensive Scheme: {team.OffensiveScheme}</h1>
-                                    <h1> Defensive Scheme: {team.DefensiveScheme}</h1>
-                                </div> */}
                             </div>
                         </div>
                     </div>

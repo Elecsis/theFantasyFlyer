@@ -2,6 +2,7 @@ import React from "react";
 import Image from 'next/image'
 import { SideCol } from "@/app/componets/SideCol";
 import Link from "next/link";
+import MissingPersonIcon from "../../../../../../public/svgs/missing_person_icon";
 
 const getTeamData = async ( {slug}: any) => {
     const team = `https://www.thefantasyflyer.com/api/research/teams/${slug}/roster` 
@@ -21,6 +22,7 @@ const TeamRoster = async( {params}: any) => {
     const slug = params 
    
     const data = await getTeamData(slug)
+    console.log(data[1].City)
     
     return (
         <main className="bg-white text-black" id='topteam'>
@@ -38,9 +40,9 @@ const TeamRoster = async( {params}: any) => {
                         </div>
                     </div>
                 </div>
-                {data?.WikipediaLogoURL && (<div className='w-full h-96 sm:w-1/2   relative bg-lime-500 rounded-lg'>
+                {data[1]?.WikipediaLogoURL && (<div className='w-full h-96 sm:w-1/2   relative bg-lime-500 rounded-lg'>
                     <Image
-                        src={data.WikipediaLogoURL}
+                        src={data[1].WikipediaLogoURL}
                         alt='Football field and stadium at the 50 yard line'
                         fill
                         className='w-full h-full  rounded-lg'
@@ -53,11 +55,11 @@ const TeamRoster = async( {params}: any) => {
             <div className='flex flex-col w-full lg:flex-row px-10 '>
                
                 <div className=' lg:w-4/5 flex flex-col md:pt-10 lg:pt-20 lg:pr-10 '>
-                    <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-between md:px-5 text-white">
-                    <Link href={`/research/teams/${slug.slug}`} className="bg-lime-500 rounded-full p-1 lg:p-3 ">Basic Team Info</Link>
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 underline">Roster</h1>
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 ">Schedule</h1>
-                        <h1 className="bg-lime-500 rounded-full p-1 lg:p-3 ">Notes</h1> 
+                    <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-between pt-5 md:px-5 text-white">
+                        <Link href={`/research/teams/${slug.slug}`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Basic Info</Link>
+                        <h1 className="border border-lime-500 text-lime-500 rounded-full p-2 lg:p-3  ">Roster</h1>
+                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Schedule</h1>
+                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Notes</h1> 
                     </div>
                     <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 ">
                         {data[0]?.map((player: any)=>(
@@ -72,7 +74,9 @@ const TeamRoster = async( {params}: any) => {
                                             className='w-full h-full  rounded-l-lg'
                                             />
                                     </Link>)} */}
+                                    
                                     <div className="flex flex-row w-full px-5 py-2 ">
+                                        <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
                                         <div className="flex flex-col w-full ">
                                             <div className="flex flex-row gap-3 text-lg font-semibold ">
                                                 <h1>{player.Name}</h1>
