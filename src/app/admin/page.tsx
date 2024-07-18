@@ -24,13 +24,13 @@ export default function Write() {
             <div className='h-full w-1/5 bg-white flex flex-col py-5 items-center gap-5 border  border-y-lime-500'>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Write Post</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Change Featured Post</Link>
-                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Editor's Post</Link>
+                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Editor Post</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Adjust Player Rankings</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>FFC Player ADP</Link>
             </div>
             <div className='w-full h-full flex flex-col items-center'>
                 <div className=''>Current Featured Post</div>
-                <div className=''>Current List of Editor's Post</div>
+                <div className=''>Current List of Editors Post</div>
                 <div className=''>Current Player Rankings</div>
             </div>
         </div>
