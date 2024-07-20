@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import Image from 'next/image';
+import MissingPersonIcon from "../../../public/svgs/missing_person_icon";
 
 const getData = async () => {
     const res = await fetch(`https://www.thefantasyflyer.com/api/research/players`, {
@@ -21,34 +22,14 @@ const ResearchPlayers = async () => {
     return (
         <div className='flex flex-col w-full bg-white gap-5 px-8'>
             {data?.map((player: any)=>(
-                <div className=' flex flex-row rounded-lg '  key={player.PlayerID}>
-                    
-                    <div className='flex flex-row  w-full  drop-shadow-lg rounded-lg text-black gap-3'>
-                        {/* {player.UsaTodayHeadshotUrl&& ( <Link  className='h-[100px] w-[100px] relative aspect-square bg-white shadow-lg rounded-l-lg ' href={`/`}>
-                                <Image
-                                src={player.UsaTodayHeadshotUrl}
-                                alt='Football field and stadium at the 50 yard line'
-                                fill
-                                className='w-full h-full  rounded-l-lg'
-                                />
-                        </Link>)} */}
-                        <div className="flex flex-row w-full pr-3  ">
-                            <div className="flex flex-col w-full ">
-                                <div className="flex flex-row gap-3 text-lg font-semibold ">
-                                    <h1>{player.Name}</h1>
-                                    <h1>{player.Team}</h1>
-                                </div>
-                                <div className="flex flex-row justify-between text-xs">
-                                    <h1> Height: {player.HeightFeet} {player.HeightInches}</h1>
-                                    <h1> Division: </h1>
-                                    
-                                   
-                                </div>
-                               
-                            </div>
-                        </div>
-                    </div>
+                <div className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-evenly pl-5 " key={player.PlayerID}>
+                <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
+                <div className="flex flex-row gap-3 text-lg text-black  w-full justify-between px-14">
+                <h1>{player.Position}</h1>
+                    <h1>{player.Name}</h1>
+                    <h1>{player.Team}</h1>
                 </div>
+            </div>
             ))}
         </div>
     )

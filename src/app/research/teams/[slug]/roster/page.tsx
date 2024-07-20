@@ -22,7 +22,6 @@ const TeamRoster = async( {params}: any) => {
     const slug = params 
    
     const data = await getTeamData(slug)
-    console.log(data[1].City)
     
     return (
         <main className="bg-white text-black" id='topteam'>
@@ -60,37 +59,13 @@ const TeamRoster = async( {params}: any) => {
                         <h1 className="border border-lime-500 text-lime-500 rounded-full p-2 lg:p-3  ">Roster</h1>
                         <Link href={`/research/teams/${slug.slug}/schedule#teamInfoSchedule`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Schedule</Link>
                     </div>
-                    <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 ">
+                    <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 p-10 gap-5">
                         {data[0]?.map((player: any)=>(
-                            <div className=' flex flex-row rounded-lg '  key={player.PlayerID}>
-                                
-                                <div className='flex flex-row  w-full  drop-shadow-lg rounded-lg text-black gap-3'>
-                                    {/* {player.UsaTodayHeadshotUrl&& ( <Link  className='h-[100px] w-[100px] relative aspect-square bg-white shadow-lg rounded-l-lg ' href={`/`}>
-                                            <Image
-                                            src={player.UsaTodayHeadshotUrl}
-                                            alt='Football field and stadium at the 50 yard line'
-                                            fill
-                                            className='w-full h-full  rounded-l-lg'
-                                            />
-                                    </Link>)} */}
-                                    
-                                    <div className="flex flex-row w-full px-5 py-2 ">
-                                        <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
-                                        <div className="flex flex-col w-full ">
-                                            <div className="flex flex-row gap-3 text-lg font-semibold ">
-                                                <h1>{player.Name}</h1>
-                                                <h1>{player.Team}</h1>
-                                                <h1>{player.Position}</h1>
-                                            </div>
-                                            <div className="flex flex-row justify-between text-xs">
-                                                <h1> Height: {player.HeightFeet} {player.HeightInches}</h1>
-                                                <h1> Division: </h1>
-                                                
-                                            
-                                            </div>
-                                        
-                                        </div>
-                                    </div>
+                            <div className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-evenly pl-5 " key={player.PlayerID}>
+                                <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
+                                <div className="flex flex-row gap-3 text-lg font-semibold  w-full justify-between px-14">
+                                    <h1>{player.Name}</h1>
+                                    <h1>{player.Position}</h1>
                                 </div>
                             </div>
                         ))}
