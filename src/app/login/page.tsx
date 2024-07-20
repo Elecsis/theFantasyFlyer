@@ -7,7 +7,7 @@ import SignInWithGoogle from "../componets/GoogleSignInButton";
 
 export default async function Login() {
     const session = await getServerSession(authOptions);
-    
+    console.log(session)
    
     if(session) {
         return redirect('/')

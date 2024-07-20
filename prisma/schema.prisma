@@ -25,7 +25,7 @@ model User {
   Comment       Comment[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-
+  role UserRole @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -50,6 +50,13 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+}
+
+enum UserRole {
+  ADMIN
+  USER 
+  WRITER
+  FLYER
 }
 
 model Session {

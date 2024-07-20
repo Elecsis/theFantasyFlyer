@@ -6,7 +6,7 @@ import { SignOut } from "../componets/signoutButton";
 
 export default async function MyAccount() {
     const session = await getServerSession(authOptions);
-    
+   console.log(session) 
    
     if(!session) {
         return redirect('/login')
