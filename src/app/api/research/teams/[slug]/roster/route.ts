@@ -35,6 +35,11 @@ export const GET = async (req: any, params: any) => {
                       },
                       {
                         Position: {
+                          endsWith: 'G', 
+                        },
+                      },
+                      {
+                        Position: {
                           endsWith: 'C', 
                         },
                       },

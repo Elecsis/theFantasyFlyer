@@ -230,6 +230,32 @@ model Team {
   StadiumDetails               Stadium?
 }
 
+model matchUpBasic {
+  id               String   @id @default(cuid()) @map("_id")
+  GameID           Int?
+  GlobalGameID     Int?
+  ScoreID          Int?
+  GameKey          String?
+  Season           Int
+  SeasonType       Int?
+  Status           String?
+  Canceled         Boolean?
+  Date             String?
+  Day              String?
+  DateTime         String?
+  DateTimeUTC      String?
+  AwayTeam         String?
+  HomeTeam         String?
+  GlobalAwayTeamID Int?
+  GlobalHomeTeamID Int?
+  AwayTeamID       Int?
+  HomeTeamID       Int?
+  Closed           Boolean?
+  LastUpdated      String?
+  IsClosed         Boolean?
+  Week             Int
+}
+
 model Stadium {
   id             String  @id @default(cuid()) @map("_id")
   StadiumID      Int

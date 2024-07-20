@@ -54,12 +54,11 @@ const TeamRoster = async( {params}: any) => {
 
             <div className='flex flex-col w-full lg:flex-row px-10 '>
                
-                <div className=' lg:w-4/5 flex flex-col md:pt-10 lg:pt-20 lg:pr-10 '>
-                    <div className="flex flex-row w-full  lg:text-3xl pb-5 justify-between pt-5 md:px-5 text-white">
-                        <Link href={`/research/teams/${slug.slug}`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Basic Info</Link>
+                <div className=' lg:w-4/5 flex flex-col md:pt-10 lg:pt-20 lg:pr-10 ' id="teamInfoRoster">
+                    <div className="flex flex-row w-full  lg:text-xl pb-5 justify-between pt-5 md:px-5 text-white">
+                        <Link href={`/research/teams/${slug.slug}#teamInfoBasic`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Basic Info</Link>
                         <h1 className="border border-lime-500 text-lime-500 rounded-full p-2 lg:p-3  ">Roster</h1>
-                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Schedule</h1>
-                        <h1 className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Notes</h1> 
+                        <Link href={`/research/teams/${slug.slug}/schedule#teamInfoSchedule`} className="bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white hover:underline">Schedule</Link>
                     </div>
                     <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 ">
                         {data[0]?.map((player: any)=>(
