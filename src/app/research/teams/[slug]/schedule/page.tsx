@@ -21,7 +21,7 @@ interface Matchup {
 
 const getTeamData = async ( {slug}: any) => {
 
-    const team = `http://localhost:3000/api/research/teams/${slug}/schedule` 
+    const team = `https://www.thefantasyflyer.com/api/research/teams/${slug}/schedule` 
     const res = await fetch(team, {
         cache: 'no-store',
     });
