@@ -43,6 +43,16 @@ export const GET = async (req: any, params: any) => {
                           endsWith: 'C', 
                         },
                       },
+                      {
+                        Position: {
+                          endsWith: 'FB', 
+                        },
+                      },
+                      {
+                        Position: {
+                          endsWith: 'OL', 
+                        },
+                      },
                     ],
                 }}),
                 
