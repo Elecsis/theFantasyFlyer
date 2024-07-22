@@ -25,7 +25,6 @@ model User {
   Comment       Comment[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-  role UserRole @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -52,12 +51,7 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
-enum UserRole {
-  ADMIN
-  USER 
-  WRITER
-  FLYER
-}
+
 
 model Session {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
