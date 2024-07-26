@@ -67,7 +67,7 @@ export default async function CardList( page: any, cat: any  ) {
                     </div>
                     
                     <h1 className='p-3  font-semibold'>{post.title}</h1>
-                    <div className="p-3 md:text-xs lg:text-lg" dangerouslySetInnerHTML={{ __html:post.desc.substring(0,115)+ '........'}}></div >
+                    <div className="p-2 md:text-xs lg:text-base" dangerouslySetInnerHTML={{ __html:post.desc.substring(0,100)+ '........'}}></div >
                     <Link href={`/blog/${post.slug}`} className="underline hover:text-lime-800 underline-offset-4 rounded-md text-lime-500 w-24 text-center  pb-2">Read More</Link>
                 </div>
             </div>
