@@ -6,14 +6,8 @@ import MainPostBody from "../componets/MainPostBody";
 export default function News({searchParams}: {searchParams: any}) {
 
     const page = parseInt(searchParams.page) || 1;
-
     const  param = searchParams
-    
     const cat = param.cat
-
-
-
-   
 
     return (
         <main className=" bg-white text-black ">

@@ -4,20 +4,22 @@ import { NextResponse } from "next/server"
 export const GET = async (req:any) => {
 
   const {searchParams} = new URL(req.url);
+  const page = Number(searchParams.get("page"));
   const search = String(searchParams.get("search"));
-  const POST_PER_PAGE = 5;
+  const PLAYERS_PER_PAGE = 30;
 
 
     try {
         const [playerBasic, count] = await prisma.$transaction([
           prisma.playerBasic.findMany({
             orderBy:  {PlayerID: "asc"},
-            take:40,
+            take:PLAYERS_PER_PAGE,
+            skip: PLAYERS_PER_PAGE * (page -1),
             where:{ 
                 Active: true,
                 Name:{
-                  startsWith: search
-              },
+                  contains: search
+                },
               
                
                 OR: [
@@ -55,7 +57,45 @@ export const GET = async (req:any) => {
             }
           }
         ),
-        prisma.playerBasic.count(),
+        prisma.playerBasic.count({ where: {
+          Active: true,
+          Name:{
+            contains: search
+          },
+        
+         
+          OR: [
+              
+
+            {
+              PositionCategory: {
+                equals: 'OFF',
+              },
+            },
+            { Position:  { 
+              equals: 'K' 
+              },
+            },
+          ],
+
+          
+          NOT: [{
+              Position: {
+                endsWith: 'OT', 
+              },
+            },
+            {
+              Position: {
+                endsWith: 'G', 
+              },
+            },
+            {
+              Position: {
+                endsWith: 'C', 
+              },
+            },
+          ],
+        }}),
 
       ])
         return new NextResponse(JSON.stringify([playerBasic, count], {status: 200} as any))

@@ -18,13 +18,11 @@ export default function ResearchPlayerSearch() {
     },[query, router])
     
     return (
-        <div className="bg-white flex flex-row w-full border border-lime-500 rounded-full items-center h-12 text-black p-4">
             <input 
                 type={text}
                 placeholder="Search...." 
-                className="w-full pl-3 focus:accent-lime-500"
+                className="w-full pl-3 bg-white flex flex-row border border-lime-500 rounded-full items-center h-12 text-black p-4  focus:outline-none  focus:border-lime-500 focus:ring-1 focus:ring-lime-500"
                 onChange={ e => setText(e.target.value)}
             />
-        </div>
     ) 
 }

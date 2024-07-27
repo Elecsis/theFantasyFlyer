@@ -41,8 +41,8 @@ const Comments = ({postSlug}: any) => {
             <div className="w-full  pt-16 pb-10 flex flex-col">
                 <h1 className="text-stone-600 text-3xl pb-10">Comments</h1>
                 {status === "authenticated" ? (
-                    <div className="flex flex-col md:flex-row h-36 w-full">
-                        <textarea value={desc} className="md:w-[85%]  h-full border" placeholder="Write a comment ......." onChange={(e)=> setDesc(e.target.value)}/>
+                    <div className="flex flex-col md:flex-row h-36 w-full rounded-lg">
+                        <textarea value={desc} className="md:w-[85%]  h-full border focus:outline-none  focus:border-lime-500 focus:ring-1 focus:ring-lime-500 rounded-lg" placeholder="Write a comment ......." onChange={(e)=> setDesc(e.target.value)}/>
                         <div className="w-[50%] md:w-[15%] flex flex-col justify-center pt-10 md:pt-0 md:px-6">
                              <button  onClick={handleSubmit} className=" bg-lime-500 hover:bg-lime-800 p-2 rounded-md text-white h-10 text-center ">Send</button>
                         </div>
