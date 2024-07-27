@@ -94,7 +94,7 @@ export default function Footer() {
                     </div>
                     
                 </div> 
-                <p className='text-xs font-light pt-10  pb-20'>© 2023 The Fanatasy Flyer, LLC     |     TERMS     |   PRIVACY</p>
+                <p className='text-xs font-light pt-10  pb-20'>© 2023 The Fanatasy Flyer, LLC     |     <Link href={'/terms'} className="">TERMS</Link>      |   <Link href={'/policy'} className="">POLICY</Link></p>
             </div>
         </form>    
        </div>
