@@ -37,6 +37,7 @@ export default function Footer() {
                             <Link href="/news" className="hover:underline " >News & Blog</Link>
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
+                            <Link href="/show" className="hover:underline">The Show</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Footbal:101</Link>
                             <Link href="/login" className="hover:underline">Login</Link>
                         </div>
@@ -83,6 +84,7 @@ export default function Footer() {
                             <Link href="/news" className="hover:underline">News & Blog</Link>
                             <Link href="/rankings" className="hover:underline">Rankings</Link>
                             <Link href="/research" className="hover:underline">Research</Link>
+                            <Link href="/show" className="hover:underline">The Show</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Football:101</Link>
                             <Link href="/login" className="hover:underline">Login</Link>
                         </div>

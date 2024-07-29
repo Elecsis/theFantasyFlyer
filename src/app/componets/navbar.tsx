@@ -27,6 +27,7 @@ export default  function Navbar() {
                                 <Link href={"/news"} className="hover:underline">News & Blog</Link>
                                 <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                                 <Link href={"/research/teams"} className="hover:underline">Research</Link>
+                                <Link href={"/show"} className="hover:underline">The Show</Link>
                                 <Link href={"/fantasy"} className="hover:underline">Fantasy🏈:101</Link>
                                 <LogInMyAccount/>
                             </div>
@@ -37,6 +38,7 @@ export default  function Navbar() {
                     <Link href={"/news"} className="hover:underline">News & Blog</Link>
                     <Link href={"/rankings"} className="hover:underline">Rankings</Link>
                     <Link href={"/research/teams"} className="hover:underline">Research</Link>
+                    <Link href={"/show"} className="hover:underline">The Show</Link>
                     <Link href={"/fantasy"} className="hover:underline">Fantasy🏈:101</Link>
                     <LogInOutButton/>
                 </div>
