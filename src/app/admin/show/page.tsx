@@ -1,16 +1,9 @@
 
 'use client'
-import { authOptions } from "@/utils/auth";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
 import { useState } from "react";
 
 
-export default async function PostShow() {
-    const session = await getServerSession(authOptions);
-    console.log(session)
-   
-   
+export default  function PostShow() {
 
     const [title, setTitle] = useState('');
     const [vidURL, setVidURL] = useState('');
@@ -34,10 +27,6 @@ export default async function PostShow() {
         setTitle('');
         setVidURL('');
     }
-
-    if(session) {
-        return redirect('/')
-    } else
 
     return (
         <main className="flex w-full h-full bg-lime-500 border border-white border-t-2 border-b-2  text-black justify-center p-20">
