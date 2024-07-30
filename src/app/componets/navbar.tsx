@@ -13,7 +13,7 @@ export default  function Navbar() {
             <nav className="flex flex-row w-min-screen bg-white text-black items-center justify-between px-4 lg:px-10 py-3 relative   z-50">
                 <Link href={"/"} className="lg:pl-3  font-medium flex flex-row" onClick={() =>{ setIsMobileMenuExpanded(false)}}>
                     <h1 className="flex text-xl sm:text-2xl md:text-base lg:hidden text-lime-500 drop-shadow-lg" >The Fantasy Flyer</h1>
-                    <h1 className="hidden lg:flex text-4xl text-lime-500 drop-shadow-lg">The Fantasy Flyer</h1>
+                    <h1 className="hidden lg:flex text-3xl text-lime-500 drop-shadow-lg">The Fantasy Flyer</h1>
                 </Link>
                 <div className="md:hidden flex flex-row items-center gap-4 ">
                 <LogInOutButton/>

@@ -15,7 +15,7 @@ export default async function Terms() {
 
                         1. Introduction<br/><br/>
 
-                        Welcome to thefantasyflyer.com (“we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website thefantasyflyer.com , use our services, or interact with our companion vlog show on YouTube. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services.
+                        Welcome to thefantasyflyer.com (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website thefantasyflyer.com , use our services, or interact with our companion vlog show on YouTube. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services.
                         <br/><br/><br/>
 
                         2. Information We Collect<br/><br/>
