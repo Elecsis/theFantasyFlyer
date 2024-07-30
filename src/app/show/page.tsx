@@ -16,7 +16,6 @@ const getShowData = async () => {
 export default async function Fantasy() {
 
     const showData = await getShowData();
-    console.log(showData)
 
     return (
         <main className="flex flex-col w-full h-auto bg-white border border-white border-t-2 border-b-2  text-black justify-center   ">

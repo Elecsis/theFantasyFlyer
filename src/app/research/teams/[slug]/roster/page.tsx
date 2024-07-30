@@ -61,13 +61,13 @@ const TeamRoster = async( {params}: any) => {
                     </div>
                     <div className="flex flex-col justify-evenly h-full border rounded-xl border-lime-500 p-10 gap-5">
                         {data[0]?.map((player: any)=>(
-                            <div className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-evenly pl-5 " key={player.PlayerID}>
+                            <Link href={`/research/players/${player.PlayerID}`} className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-evenly pl-5 " key={player.PlayerID}>
                                 <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
                                 <div className="flex flex-row gap-3 text-lg font-semibold  w-full justify-between px-14">
                                     <h1>{player.Name}</h1>
                                     <h1>{player.Position}</h1>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                        
                     </div>

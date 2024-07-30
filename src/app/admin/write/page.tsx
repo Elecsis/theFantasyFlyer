@@ -10,6 +10,7 @@ import { app } from "@/utils/firebase";
 import ImageIconOne from "../../../../public/svgs/image1";
 import ImageIconTwo from "../../../../public/svgs/image2";
 import VideoIcon from "../../../../public/svgs/video";
+import Link from "next/link";
 
 
 const storage = getStorage(app);
@@ -175,6 +176,11 @@ export default function Write() {
                 <button onClick={handleSubmit}  className="bg-white text-black hover:bg-lime-600 self-center py-2 px-4 rounded h-12 w-[33%] border-solid border-white">
                     Publish
                 </button>
+            </div>
+            <div className="flex pt-10 w-full justify-center">
+                <Link  href={'/admin'} className="bg-white text-black border text-center border-lime-500 hover:bg-lime-600 self-center py-2 px-4 rounded-full h-12 w-[33%] ">
+                    Back to Admin
+                </Link>
             </div>
         </main>
     );
