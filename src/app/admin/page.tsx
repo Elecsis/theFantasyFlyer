@@ -22,8 +22,9 @@ export default function Write() {
        <main className='h-screen w-screen bg-lime-500'>
             <div className='w-screen bg-white flex flex-row py-5 items-center gap-5 border  border-y-lime-500'>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Write Post</Link>
-                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Change Featured Post</Link>
+                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Change Feat. Post</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Editor Post</Link>
+                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/show"}>Post New Show</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Adjust Player Rankings</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>FFC Player ADP</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>FFC Player ADP</Link>

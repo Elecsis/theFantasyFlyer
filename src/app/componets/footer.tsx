@@ -63,9 +63,9 @@ export default function Footer() {
                 <div className="px-9  pb-12 flex flex-row text-sm font-light pt-6  bg-white">
                     <p className='pr-2'>© 2023 The Fantasy Flyer, LLC  </p>
                     <p className='pr-2'>|</p>
-                    <p className='pr-2'>TERMS</p>
+                    <p className='pr-2'><Link href={'/terms'} className="">TERMS</Link></p>
                     <p className='pr-2'>|</p>
-                    <p className=''> PRIVACY</p>
+                    <p className=''> <Link href={'/policy'} className="">POLICY</Link></p>
                 </div>
             </div>
             {/* desktop */}

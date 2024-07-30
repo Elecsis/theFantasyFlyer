@@ -8,7 +8,7 @@ export const GET = async () => {
         return new NextResponse(JSON.stringify(posts, {status: 200}as any))
     } catch (err) {
         console.log(err)
-        return new NextResponse(JSON.stringify({message: 'Something went wrong'}, {status: 500}as any))
+        return new NextResponse(JSON.stringify({message: 'Something went wrong getting editors post'}, {status: 500}as any))
     }
 } 
 

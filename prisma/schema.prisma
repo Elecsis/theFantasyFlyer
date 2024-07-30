@@ -126,6 +126,12 @@ model Comment {
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
 
+model Show{
+  id      String   @id @default(cuid()) @map("_id")
+  title   String
+  vidURL  String    
+}
+
 model TeamBasic {
   id                   String  @id @default(cuid()) @map("_id")
   Key                  String

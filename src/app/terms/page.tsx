@@ -7,7 +7,7 @@ export default async function Terms() {
     return (
         <main className="flex w-full h-full bg-lime-500 border border-white border-t-2 border-b-2  text-black justify-center p-20">
        
-            <div className="flex h-auto w-[50%] rounded-lg bg-white   items-center flex-col justify-evenly p-8">
+            <div className="flex h-auto md:w-[75%] rounded-lg bg-white   items-center flex-col justify-evenly p-8 drop-shadow-lg">
                 <h1 className="pb-[8%] text-2xl text-center">Terms</h1>
                 <p className="text-left pb-8"> 
                     **Terms and Conditions**<br/><br/>

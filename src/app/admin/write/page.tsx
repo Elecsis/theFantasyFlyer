@@ -105,7 +105,7 @@ export default function Write() {
             "https://www.thefantasyflyer.com/api/posts",{
                 method: "POST",
                 body: JSON.stringify({
-                    title ,
+                    title: title ,
                     desc: value,
                     img: media,
                     slug: slugify(title),
