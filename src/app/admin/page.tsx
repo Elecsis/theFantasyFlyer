@@ -26,8 +26,7 @@ export default function Write() {
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Editor Post</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/show"}>Post New Show</Link>
                 <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>Adjust Player Rankings</Link>
-                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>FFC Player ADP</Link>
-                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/write"}>FFC Player ADP</Link>
+                <Link className="w-[90%] text-center bg-lime-500 rounded-full p-2 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white " href={"/admin/adpffc"}>FFC Player ADP</Link>
             </div>
 
             <div className='w-full h-full flex flex-col items-center'>

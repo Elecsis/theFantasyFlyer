@@ -25,8 +25,8 @@ model User {
   Comment       Comment[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
 }
 
 model Account {
@@ -50,8 +50,6 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
-
-
 
 model Session {
   id           String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -126,10 +124,10 @@ model Comment {
   post      Post     @relation(fields: [postSlug], references: [slug])
 }
 
-model Show{
-  id      String   @id @default(cuid()) @map("_id")
-  title   String
-  vidURL  String    
+model Show {
+  id     String @id @default(cuid()) @map("_id")
+  title  String
+  vidURL String
 }
 
 model TeamBasic {
@@ -279,8 +277,18 @@ model Stadium {
   teamID         String? @unique @db.ObjectId
 }
 
-model playerPPRADP {
-  id            String  @id @default(cuid()) @map("_id")
+
+
+type Meta {
+  type         String
+  teams        Int
+  rounds       Int
+  total_drafts Int
+  start_date   String
+  end_date     String
+}
+
+type CalPlayer {
   player_id     Int
   name          String
   position      String?
@@ -292,6 +300,13 @@ model playerPPRADP {
   low           Int?
   stdev         Float?
   bye           Int?
+}
+
+model playerPPRADP {
+  id     String      @id @default(cuid()) @map("_id") @db.ObjectId
+  status String
+  meta   Meta
+  players CalPlayer[]
 }
 
 model playerNonPPRADP {
