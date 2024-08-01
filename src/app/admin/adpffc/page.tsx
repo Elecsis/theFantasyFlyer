@@ -6,13 +6,15 @@ import { useState } from "react";
 
 export default  function AdpFfc() {
 
-    const [adpJson, setAdpJson] = useState('blah');
-
     
-    const handleSubmit = async() => {
-        
-        console.log( 'before:.......',adpJson)
-       
+    const handleSubmit = async () => {
+        console.log('started')
+        const res = await fetch(
+            "http://localhost:3000/api/adpFfc",{
+                method: "POST",
+            }
+            
+        )
     }
 
     return (
@@ -20,10 +22,9 @@ export default  function AdpFfc() {
        
             <div className="flex h-auto w-[65%] rounded-lg bg-white text-center  flex-col justify-evenly  p-10 gap-5">
                 <h1 className="pb-[8%] text-2xl">Fantasy Football Calculater ADP</h1>
-                <input className="px-5 text-2xl rounded-lg border border-lime-500" type="text" placeholder="YouTube Url" onChange={ e => setAdpJson(e.target.value)}/>
                 <div className="flex pt-10 w-full justify-center">
-                    <button onClick={()=>handleSubmit()}  className="bg-white text-black border border-lime-500 hover:bg-lime-600 self-center py-2 px-4 rounded h-12 w-[33%] ">
-                        Publish
+                    <button onClick={handleSubmit}  className="bg-white text-black border border-lime-500 hover:bg-lime-600 self-center py-2 px-4 rounded h-12 w-[33%] ">
+                        Delete ADPs
                     </button>
                 </div>
             </div> 
