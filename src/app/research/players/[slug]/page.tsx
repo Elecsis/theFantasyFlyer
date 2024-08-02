@@ -1,11 +1,23 @@
+'use client'
 import React from "react";
 import Image from 'next/image'
 import { SideCol } from "@/app/componets/SideCol";
 import Link from "next/link";
+import { useSearchParams } from 'next/navigation'
 
 const getPlayerData = async ( slug: any) => {
-    const team = `https://www.thefantasyflyer.com/api/research/players/${slug}` 
-    const res = await fetch(team, {
+    const player = `http://localhost:3000/api/research/players/${slug}` 
+    const res = await fetch(player, {
+        cache: 'no-store',
+    });
+    if(!res.ok){
+        throw new Error('Failed')
+    }
+    return res.json()
+};
+
+const getADPData = async () => {
+    const res = await fetch(`http://localhost:3000/api/adpFfc/player`, {
         cache: 'no-store',
     });
     if(!res.ok){
@@ -17,15 +29,21 @@ const getPlayerData = async ( slug: any) => {
 
 
 
+
 const Player = async( {params}: any) => {
+
+    const searchParams = useSearchParams()
     const slug = params.slug 
-    const data = await getPlayerData(slug)
+    const playerData = String(searchParams.get("player"));
     
-    
+    const data = await getPlayerData(playerData)
+    const adpData = await getADPData()
+    console.log(adpData[0], playerData, slug)
+
     return (
         <main className="bg-white text-black" id='topPlayer'>
 
-            <div className=' flex flex-col-reverse sm:flex-row lg:pt-16 w-screen px-10'>
+             <div className=' flex flex-col-reverse sm:flex-row lg:pt-16 w-screen px-10'>
                 <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
                     <div className="flex flex-row justify-between pr-5">
                         <h1 className=' text-xl font-semibold'>{data.City} </h1>
@@ -82,22 +100,51 @@ const Player = async( {params}: any) => {
                             <h1 className=' lg:text-xl '>Weight:   </h1>
                             <h1 className=' lg:text-xl '>{data.Weight} </h1>
                         </div>
-                        <div className="flex flex-row justify-between border-b-2 px-2 ">
-                            <h1 className=' lg:text-xl '>Average Draft Position:  </h1>
-                            <h1 className=' lg:text-xl '>{data.AverageDraftPosition} </h1>
-                        </div>
-                        <div className="flex flex-row justify-between border-b-2 px-2 ">
-                            <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
-                            <h1 className=' lg:text-xl '>{data.AverageDraftPositionPPR} </h1>
-                        </div>
-                        <div className="flex flex-row justify-between border-b-2 px-2 ">
-                            <h1 className=' lg:text-xl '>Average Draft Position 2QB:  </h1>
-                            <h1 className=' lg:text-xl '>{data.AverageDraftPosition2QB} </h1>
-                        </div>
-                        <div className="flex flex-row justify-between border-b-2 px-2 ">
-                            <h1 className=' lg:text-xl '>Average Draft Position Dynasty:  </h1>
-                            <h1 className=' lg:text-xl '>{data.AverageDraftPositionDynasty} </h1>
-                        </div>
+                        {adpData[1].players.map((player: any)=>{
+                            if(player.name === playerData) {
+                                return(
+                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                        <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
+                                        <h1 className=' lg:text-xl '>{player.adp} </h1>
+                                    </div>
+                                )
+                            } else {
+                                <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
+                                    <h1 className=' lg:text-xl '>No ADP</h1>
+                                </div>
+                            }
+                        })}
+                        {adpData[0].players.map((player: any)=>{
+                            if(player.name === playerData) {
+                                return(
+                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                        <h1 className=' lg:text-xl '>Average Draft Position Standard:</h1>
+                                        <h1 className=' lg:text-xl '>{player.adp} </h1>
+                                    </div>
+                                )
+                            } else {
+                                <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
+                                    <h1 className=' lg:text-xl '>No ADP</h1>
+                                </div>
+                            }
+                        })}
+                        {adpData[2].players.map((player: any)=>{
+                            if(player.name === playerData) {
+                                return(
+                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                        <h1 className=' lg:text-xl '>Average Draft Position 2QB:</h1>
+                                        <h1 className=' lg:text-xl '>{player.adp} </h1>
+                                    </div>
+                                )
+                            } else {
+                                <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
+                                    <h1 className=' lg:text-xl '>No ADP</h1>
+                                </div>
+                            }
+                        })}
                         <div className="flex flex-row justify-between border-b-2 px-2 ">
                             <h1 className=' lg:text-xl '>Bye Week:  </h1>
                             <h1 className=' lg:text-xl '>{data.ByeWeek} </h1>
@@ -109,7 +156,7 @@ const Player = async( {params}: any) => {
                     </div>
                 </div>
                 <SideCol/>
-            </div>
+            </div> 
         </main>
     )
 }

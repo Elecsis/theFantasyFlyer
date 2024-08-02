@@ -311,45 +311,21 @@ model playerPPRADP {
 
 model playerNonPPRADP {
   id            String  @id @default(cuid()) @map("_id")
-  player_id     Int
-  name          String
-  position      String?
-  team          String?
-  adp           Float?
-  adp_formatted String?
-  times_drafted Int?
-  high          Int?
-  low           Int?
-  stdev         Float?
-  bye           Int?
+  status String
+  meta   Meta
+  players CalPlayer[]
 }
 
 model player2QbADP {
   id            String  @id @default(cuid()) @map("_id")
-  player_id     Int
-  name          String
-  position      String?
-  team          String?
-  adp           Float?
-  adp_formatted String?
-  times_drafted Int?
-  high          Int?
-  low           Int?
-  stdev         Float?
-  bye           Int?
+  status String
+  meta   Meta
+  players CalPlayer[]
 }
 
 model playerDynastyADP {
   id            String  @id @default(cuid()) @map("_id")
-  player_id     Int
-  name          String
-  position      String?
-  team          String?
-  adp           Float?
-  adp_formatted String?
-  times_drafted Int?
-  high          Int?
-  low           Int?
-  stdev         Float?
-  bye           Int?
+  status String
+  meta   Meta
+  players CalPlayer[]
 }

@@ -30,7 +30,7 @@ export default async function ResearchADP(  )  {
                 </div>
             
             {data[0].players.map((player: any)=>(
-                <Link href={`/research/players/${player.name}`} className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-between pl-5 " key={player.player_id} id="topList">
+                <Link href={`/research/players/${player.name}?player=${player.name}`} className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-between pl-5 " key={player.player_id} id="topList">
                     <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
                     <div className="flex flex-row gap-3 text-lg text-black  w-full justify-evenly  items-center">
                         <h1 className=" w-1/12">{player.adp}</h1>
