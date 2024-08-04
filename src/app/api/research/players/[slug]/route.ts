@@ -5,6 +5,7 @@ export const GET = async ( req:any, {params}: any) => {
 
     const playerID = parseInt(params.slug)
     const playerName = params.slug
+    console.log('route.....',playerName)
     
    if(!playerID){
 

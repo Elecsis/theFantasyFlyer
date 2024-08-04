@@ -10,7 +10,7 @@ export default  function AdpFfc() {
     const handleSubmit = async () => {
         console.log('started')
         const res = await fetch(
-            "http://localhost:3000/api/adpFfc",{
+            "https://www.thefantasyflyer.com/api/adpFfc",{
                 method: "POST",
             }
             
