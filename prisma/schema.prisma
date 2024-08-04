@@ -277,7 +277,30 @@ model Stadium {
   teamID         String? @unique @db.ObjectId
 }
 
+type FlyerRankTeam {
+  name     String
+  city     String
+  position String?
+  rank     Int?
+}
 
+type FlyerRankPlayer {
+  name     String
+  position String?
+  team     String?
+  rank     Int?
+}
+
+model flyerRankings {
+  id        String            @id @default(cuid()) @map("_id") @db.ObjectId
+  week      Int
+  teams     FlyerRankTeam[]
+  playerQB  FlyerRankPlayer[]
+  playerWR  FlyerRankPlayer[]
+  playerRB  FlyerRankPlayer[]
+  playerTE  FlyerRankPlayer[]
+  playerDEF FlyerRankTeam[]
+}
 
 type Meta {
   type         String
@@ -303,29 +326,29 @@ type CalPlayer {
 }
 
 model playerPPRADP {
-  id     String      @id @default(cuid()) @map("_id") @db.ObjectId
-  status String
-  meta   Meta
+  id      String      @id @default(cuid()) @map("_id") @db.ObjectId
+  status  String
+  meta    Meta
   players CalPlayer[]
 }
 
 model playerNonPPRADP {
-  id            String  @id @default(cuid()) @map("_id")
-  status String
-  meta   Meta
+  id      String      @id @default(cuid()) @map("_id")
+  status  String
+  meta    Meta
   players CalPlayer[]
 }
 
 model player2QbADP {
-  id            String  @id @default(cuid()) @map("_id")
-  status String
-  meta   Meta
+  id      String      @id @default(cuid()) @map("_id")
+  status  String
+  meta    Meta
   players CalPlayer[]
 }
 
 model playerDynastyADP {
-  id            String  @id @default(cuid()) @map("_id")
-  status String
-  meta   Meta
+  id      String      @id @default(cuid()) @map("_id")
+  status  String
+  meta    Meta
   players CalPlayer[]
 }
