@@ -37,7 +37,7 @@ export default async function PlayerMain( { data, adpData, playerName }: any ) {
                         {adpData[1].players.map((player: any)=>{
                             if(player.name === playerName) {
                                 return(
-                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <div className="flex flex-row justify-between border-b-2 px-2 " key={player.id}>
                                         <h1 className=' lg:text-xl '>Average Draft Position PPR:  </h1>
                                         <h1 className=' lg:text-xl '>{player.adp} </h1>
                                     </div>
@@ -47,7 +47,7 @@ export default async function PlayerMain( { data, adpData, playerName }: any ) {
                         {adpData[0].players.map((player: any)=>{
                             if(player.name === playerName) {
                                 return(
-                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <div className="flex flex-row justify-between border-b-2 px-2 " key={player.id}>
                                         <h1 className=' lg:text-xl '>Average Draft Position Standard:</h1>
                                         <h1 className=' lg:text-xl '>{player.adp} </h1>
                                     </div>
@@ -62,7 +62,7 @@ export default async function PlayerMain( { data, adpData, playerName }: any ) {
                         {adpData[2].players.map((player: any)=>{
                             if(player.name === playerName) {
                                 return(
-                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <div className="flex flex-row justify-between border-b-2 px-2 " key={player.id}>
                                         <h1 className=' lg:text-xl '>Average Draft Position 2QB:</h1>
                                         <h1 className=' lg:text-xl '>{player.adp} </h1>
                                     </div>
@@ -77,7 +77,7 @@ export default async function PlayerMain( { data, adpData, playerName }: any ) {
                         {adpData[3].players.map((player: any)=>{
                             if(player.name === playerName) {
                                 return(
-                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <div className="flex flex-row justify-between border-b-2 px-2 " key={player.id}>
                                         <h1 className=' lg:text-xl '>Average Draft Position Dynasty:</h1>
                                         <h1 className=' lg:text-xl '>{player.adp} </h1>
                                     </div>
@@ -92,7 +92,7 @@ export default async function PlayerMain( { data, adpData, playerName }: any ) {
                         {adpData[1].players.map((player: any)=>{
                             if(player.name === playerName) {
                                 return(
-                                    <div className="flex flex-row justify-between border-b-2 px-2 ">
+                                    <div className="flex flex-row justify-between border-b-2 px-2 " key={player.id}>
                                         <h1 className=' lg:text-xl '>Bye Week:  </h1>
                                         <h1 className=' lg:text-xl '>{player.bye} </h1>
                                     </div>
