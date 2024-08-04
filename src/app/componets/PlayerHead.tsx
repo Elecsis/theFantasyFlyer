@@ -13,7 +13,7 @@ export default async function PlayerHead( { data }: any ) {
             <div className='flex flex-col justify-between pt-10 sm:w-1/2 md:pr-10 pb-5'>
                 <div className="flex flex-row justify-between pr-5">
                     <h1 className=' text-xl font-semibold'>{data.City} </h1>
-                    <Link href={"/research"} className="bg-lime-500 text-white rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white ">Back to Teams </Link>
+                    <Link href={"/research/teams"} className="bg-lime-500 text-white rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white ">Back to Teams </Link>
                     <Link href={"/research/players"} className="bg-lime-500 text-white rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white ">Back to Players </Link>
                     <Link href={"/research/adp"} className="bg-lime-500 text-white rounded-full p-1 lg:p-3 hover:border hover:border-lime-500 hover:text-lime-500 hover:bg-white ">Back to ADP </Link>
                 </div>
