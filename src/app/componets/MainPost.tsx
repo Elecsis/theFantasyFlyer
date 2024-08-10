@@ -16,7 +16,7 @@ export default async function MainPost() {
     const data = await getData();
 
     return (
-        <div className=' flex flex-col sm:flex-row pt-16 w-screen md:pr-10 px-10'>
+        <div className=' flex flex-col sm:flex-row pt-16 w-screen md:pr-10 px-5'>
             <div className=' h-fit  aspect-square w-full sm:w-1/2 relative bg-lime-500 '>
                 <Image
                 src={data[0].img}

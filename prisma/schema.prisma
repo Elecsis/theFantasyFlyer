@@ -125,9 +125,10 @@ model Comment {
 }
 
 model Show {
-  id     String @id @default(cuid()) @map("_id")
-  title  String
-  vidURL String
+  id        String   @id @default(cuid()) @map("_id")
+  title     String
+  vidURL    String
+  createdAt DateTime @default(now())
 }
 
 model TeamBasic {

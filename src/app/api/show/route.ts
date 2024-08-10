@@ -5,7 +5,11 @@ import { NextResponse } from "next/server"
 export const GET = async () => {
 
     try {
-        const shows = await prisma.show.findMany()
+        const shows = await prisma.show.findMany({
+            orderBy:{
+                createdAt: 'desc'
+            }
+        })
         return new NextResponse(JSON.stringify(shows, {status: 200}as any))
     } catch (err) {
         console.log(err)

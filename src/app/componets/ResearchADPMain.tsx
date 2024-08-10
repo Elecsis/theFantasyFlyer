@@ -45,10 +45,11 @@ export default function ResearchADP() {
     };
 
     const renderPlayers = (players: Player[]) => {
-        return players.map((player) => (
+        return players.map((player, index) => (
             <Link href={`/research/players/${player.name}?player=${player.name}`} className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-between pl-5" key={player.player_id} id="topList">
                 <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
                 <div className="flex flex-row gap-3 text-lg text-black w-full justify-evenly items-center">
+                    <div className='text-black  w-1/12'>{index +1}</div>
                     <h1 className="w-1/12">{player.adp}</h1>
                     <h1 className="w-1/12">{player.adp_formatted}</h1>
                     <h1 className="w-1/4">{player.name}</h1>
@@ -94,10 +95,11 @@ export default function ResearchADP() {
             <div className="flex flex-row w-full border border-lime-500 rounded-full items-center justify-evenly pl-5" id="topList">
                 <div className="w-10 h-10 stroke-lime-400"><MissingPersonIcon /></div>
                 <div className="flex flex-row gap-3 text-sm md:text-lg text-black w-full justify-between px-6 md:px-10 lg:px-16">
+                    <h1>Order</h1>
                     <h1>ADP</h1>
-                    <h1>Round ADP</h1>
+                    <h1 className='lg:pr-12'>Round ADP</h1>
                     <h1>Name</h1>
-                    <h1>Position</h1>
+                    <h1 className='lg:pl-12'>  Position</h1>
                     <h1>Team</h1>
                 </div>
             </div>
