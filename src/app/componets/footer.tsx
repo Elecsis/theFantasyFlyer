@@ -57,6 +57,7 @@ export default function Footer() {
                             <Link href={'https://www.youtube.com/channel/UCKRn6jHOQ-ibRDoeUZsH3EA'} className=" hover:underline">YOUTUBE</Link>
                             <Link href={'https://www.instagram.com/thefantasyflyer/'} className=" hover:underline">INSTAGRAM</Link>
                             <Link href={'https://x.com/thefantasyflyer'} className=" hover:underline">TWITTER</Link>
+                            <Link href={'https://podcasters.spotify.com/pod/show/thefantasyflyer'} className=" hover:underline">PODCAST</Link>
                         </div>
                     }
                 </div>
@@ -93,6 +94,7 @@ export default function Footer() {
                             <Link href={'https://www.youtube.com/channel/UCKRn6jHOQ-ibRDoeUZsH3EA'} className="hover:underline">YOUTUBE</Link> 
                             <Link href={'https://www.instagram.com/thefantasyflyer/'} className="hover:underline">INSTAGRAM</Link>  
                             <Link href={'https://x.com/thefantasyflyer'} className="hover:underline">TWITTER</Link> 
+                            <Link href={'https://podcasters.spotify.com/pod/show/thefantasyflyer'} className="hover:underline">PODCAST</Link> 
                         </div>
                     </div>
                     
