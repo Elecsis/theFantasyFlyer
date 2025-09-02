@@ -25,8 +25,8 @@ export default  function Navbar() {
                             <div className={`absolute top-14 right-0  w-auto  border-l-4 border-b-4 border-lime-500 h-auto flex flex-col bg-white p-5 gap-3 text-2xl rounded-b-lg transform transition-transform duration-2000 ease-in-out ${isMoiblieMenuExpanded ? 'translate-x-0' : 'translate-x-full'}`} onClick={() =>{ setIsMobileMenuExpanded(!isMoiblieMenuExpanded)}}>
                                 <Link href={"/"} className="hover:underline">Home</Link>
                                 <Link href={"/news"} className="hover:underline">News & Blog</Link>
-                                <Link href={"/rankings"} className="hover:underline">Rankings</Link>
-                                <Link href={"/research/teams"} className="hover:underline">Research</Link>
+                                {/* <Link href={"/rankings"} className="hover:underline">Rankings</Link>
+                                <Link href={"/research/teams"} className="hover:underline">Research</Link> */}
                                 <Link href={"/show"} className="hover:underline">The Show</Link>
                                 <Link href={"/fantasy"} className="hover:underline">Fantasy🏈:101</Link>
                                 <LogInMyAccount/>
@@ -36,8 +36,8 @@ export default  function Navbar() {
                 </div>
                 <div className="hidden md:flex  md:text-base lg:text-xl flex-row items-center justify-end text-xl gap-6 p-2 pr-3">
                     <Link href={"/news"} className="hover:underline">News & Blog</Link>
-                    <Link href={"/rankings"} className="hover:underline">Rankings</Link>
-                    <Link href={"/research/teams"} className="hover:underline">Research</Link>
+                    {/* <Link href={"/rankings"} className="hover:underline">Rankings</Link>
+                    <Link href={"/research/teams"} className="hover:underline">Research</Link> */}
                     <Link href={"/show"} className="hover:underline">The Show</Link>
                     <Link href={"/fantasy"} className="hover:underline">Fantasy🏈:101</Link>
                     <LogInOutButton/>

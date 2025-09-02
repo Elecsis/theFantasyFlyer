@@ -36,8 +36,8 @@ export default function Footer() {
                     {isLinksExpanded &&
                         <div className="flex flex-col gap-2 py-2" onClick={() => { setIsLinksExpanded(false)}}>
                             <Link href="/news" className="hover:underline " >News & Blog</Link>
-                            <Link href="/rankings" className="hover:underline">Rankings</Link>
-                            <Link href="/research" className="hover:underline">Research</Link>
+                            {/* <Link href="/rankings" className="hover:underline">Rankings</Link>
+                            <Link href="/research" className="hover:underline">Research</Link> */}
                             <Link href="/show" className="hover:underline">The Show</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Footbal:101</Link>
                             <LogInOutFooter/>
@@ -84,8 +84,8 @@ export default function Footer() {
                         
                         <div className='flex flex-col font-light gap-2 justify-center'>
                             <Link href="/news" className="hover:underline">News & Blog</Link>
-                            <Link href="/rankings" className="hover:underline">Rankings</Link>
-                            <Link href="/research" className="hover:underline">Research</Link>
+                            {/* <Link href="/rankings" className="hover:underline">Rankings</Link>
+                            <Link href="/research" className="hover:underline">Research</Link> */}
                             <Link href="/show" className="hover:underline">The Show</Link>
                             <Link href="/fantasy" className="hover:underline">Fantasy Football:101</Link>
                             <LogInOutFooter/>
